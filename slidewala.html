@@ -1,39 +1,166 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0B0B0A">
-<title>SlideWala · rajkahar</title>
-<meta name="description" content="SlideWala: An AI presentation generator. A project by rajkahar.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#faf7f2">
+
+<title>SlideWala — Raj Kahar</title>
+<meta name="description" content="SlideWala is an AI-powered presentation creation tool built by Raj Kahar.">
+
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600&family=DM+Mono&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="portfolio-redesign.css">
 </head>
+
 <body>
-<header class="nav"><a class="brand" href="index.html">rajkahar</a><nav aria-label="Primary"><a href="work.html" aria-current="page">Work</a><a href="about.html">About</a><a href="#contact">Contact</a></nav></header>
-<main class="wrap proj">
-<a class="back mono" href="work.html">← All work</a>
-<h1 class="rv">SlideWala</h1>
-<p class="lede rv" style="--d:.1s">An AI presentation generator.</p>
-<dl class="facts rv" style="--d:.2s">
-<div><dt class="mono">Project</dt><dd>03 / 03</dd></div>
-<div><dt class="mono">Type</dt><dd>Web app</dd></div>
-<div><dt class="mono">Status</dt><dd>Live</dd></div>
-<div><dt class="mono">Built by</dt><dd>rajkahar</dd></div>
-</dl>
-<a class="btn rv" href="https://slidewala.onrender.com" target="_blank" rel="noopener noreferrer">Visit live site ↗</a>
-<!-- Screenshot: save as assets/projects/slidewala.png -->
-<div class="shot big rv"><span>SlideWala</span><img src="assets/projects/slidewala.png" alt="SlideWala screenshot" onerror="this.remove()"></div>
-<a class="next" href="stickymind.html"><span class="mono">Next project</span><span class="nm">StickyMind →</span></a>
+
+<header class="nav">
+    <a class="brand" href="index.html">
+        raj<span>kahar</span><i>®</i>
+    </a>
+
+    <nav aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact">Contact ↗</a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="wrap proj">
+
+        <p class="mono eyebrow">PROJECT / 03 — AI &amp; CREATION TOOL</p>
+
+        <h1>Slide<em>Wala.</em></h1>
+
+        <p class="lede">
+            An AI-powered presentation creation tool that transforms
+            topics and ideas into structured, ready-to-use slides.
+        </p>
+
+        <div class="facts">
+            <div>
+                <span class="mono">CATEGORY</span>
+                <strong>AI / Productivity</strong>
+            </div>
+
+            <div>
+                <span class="mono">BUILT WITH</span>
+                <strong>Python · Flask · AI APIs</strong>
+            </div>
+
+            <div>
+                <span class="mono">STATUS</span>
+                <strong>Live Project</strong>
+            </div>
+        </div>
+
+        <div class="proj-actions">
+            <a class="btn" href="https://slidewala.onrender.com" target="_blank" rel="noopener noreferrer">
+                Visit SlideWala ↗
+            </a>
+
+            <a class="text-link" href="https://github.com/Rajkahar-12/slidewala" target="_blank" rel="noopener noreferrer">
+                View source code ↗
+            </a>
+        </div>
+
+        <div class="shot big">
+            <img src="assets/projects/slidewala.png" alt="SlideWala application preview" onerror="this.style.display='none'">
+            <span>SlideWala.</span>
+        </div>
+
+    </section>
+
+    <section class="wrap" style="padding-bottom:5rem;">
+
+        <div class="section-kicker">
+            <span class="mono">01 / THE IDEA</span>
+            <span class="kicker-line"></span>
+        </div>
+
+        <h2 class="head">From a simple topic to a presentation.</h2>
+
+        <p class="lede">
+            SlideWala aims to simplify presentation creation.
+            Users can provide a topic and generate structured
+            slide content with the help of AI.
+        </p>
+
+    </section>
+
+    <section class="wrap" style="padding-bottom:5rem;">
+
+        <div class="section-kicker">
+            <span class="mono">02 / THE EXPERIENCE</span>
+            <span class="kicker-line"></span>
+        </div>
+
+        <h2 class="head">More control over every presentation.</h2>
+
+        <p class="lede">
+            The application explores different presentation lengths,
+            audiences, writing tones and visual themes, helping users
+            shape the output around their needs.
+        </p>
+
+    </section>
+
+    <section class="wrap" style="padding-bottom:5rem;">
+
+        <div class="section-kicker">
+            <span class="mono">03 / THE BUILD</span>
+            <span class="kicker-line"></span>
+        </div>
+
+        <h2 class="head">Building with Python and AI.</h2>
+
+        <p class="lede">
+            This project gave me the opportunity to work with Flask,
+            AI API integration, backend logic and presentation
+            generation. It helped me understand how different
+            technologies can come together to create a useful product.
+        </p>
+
+    </section>
+
+    <section class="wrap next" style="padding-bottom:6rem;">
+
+        <p class="mono eyebrow">WHAT'S NEXT?</p>
+
+        <h2>More ideas.<br><em>More things to build.</em></h2>
+
+        <p class="lede">
+            Every project is another step in my journey as a developer.
+        </p>
+
+        <a class="btn" href="work.html">Explore all projects ↗</a>
+
+        <p style="margin-top:2rem;">
+            <a class="text-link" href="index.html">← Back to home</a>
+        </p>
+
+    </section>
+
 </main>
-<footer class="foot" id="contact"><div class="wrap">
-<p class="mono">Contact</p>
-<a class="mail" href="mailto:rajkahar9321@gmail.com">rajkahar9321@gmail.com</a>
-<div class="row"><a class="link" href="https://github.com/Rajkahar-12" target="_blank" rel="noopener noreferrer">GitHub ↗</a><span class="mono">© 2026 rajkahar</span></div>
-</div></footer>
+
+<footer class="site-footer wrap">
+    <a class="brand" href="index.html">raj<span>kahar</span><i>®</i></a>
+    <p class="mono">DESIGNED &amp; BUILT WITH CURIOSITY.</p>
+    <p class="mono">© <span id="year">2026</span> RAJ KAHAR</p>
+</footer>
+
 <script src="script.js" defer></script>
+
 </body>
 </html>
