@@ -2,29 +2,34 @@
 document.documentElement.classList.add("js");
 
 document.addEventListener("DOMContentLoaded", () => {
+    const root = document.documentElement;
+    const header = document.querySelector(".nav");
+    const themeKey = "raj-portfolio-theme";
 
     // =====================================
     // THEME
     // =====================================
-
-    const header = document.querySelector(".nav");
-    const themeKey = "raj-portfolio-theme";
-    const themeButton = document.createElement("button");
 
     let savedTheme = "light";
 
     try {
         savedTheme = localStorage.getItem(themeKey) || "light";
     } catch (error) {
-        // Continue with default theme.
+        savedTheme = "light";
     }
 
-    function applyTheme(theme) {
+    const themeButton = document.createElement("button");
+
+    themeButton.className = "theme-toggle";
+    themeButton.type = "button";
+
+    function applyTheme(theme, save = true) {
         const selectedTheme = theme === "dark" ? "dark" : "light";
 
-        document.documentElement.setAttribute("data-theme", selectedTheme);
+        root.setAttribute("data-theme", selectedTheme);
 
-        themeButton.textContent = selectedTheme === "dark" ? "☀" : "☾";
+        themeButton.textContent =
+            selectedTheme === "dark" ? "☀" : "☾";
 
         themeButton.setAttribute(
             "aria-label",
@@ -33,31 +38,32 @@ document.addEventListener("DOMContentLoaded", () => {
                 : "Switch to dark mode"
         );
 
-        try {
-            localStorage.setItem(themeKey, selectedTheme);
-        } catch (error) {
-            // Theme still works without storage.
+        if (save) {
+            try {
+                localStorage.setItem(themeKey, selectedTheme);
+            } catch (error) {
+                // Theme still works without storage.
+            }
         }
     }
 
+    applyTheme(savedTheme, false);
+
+    themeButton.addEventListener("click", () => {
+        const currentTheme = root.getAttribute("data-theme");
+
+        applyTheme(currentTheme === "dark" ? "light" : "dark");
+    });
+
     if (header) {
-        themeButton.className = "theme-toggle";
-        themeButton.type = "button";
-
         header.appendChild(themeButton);
-        applyTheme(savedTheme);
+    }
 
-        themeButton.addEventListener("click", () => {
-            const currentTheme =
-                document.documentElement.getAttribute("data-theme");
+    // =====================================
+    // MOBILE NAVIGATION
+    // =====================================
 
-            applyTheme(currentTheme === "dark" ? "light" : "dark");
-        });
-
-        // =====================================
-        // MOBILE MENU
-        // =====================================
-
+    if (header) {
         const navLinks = header.querySelector("nav");
 
         if (navLinks) {
@@ -66,7 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
             menuButton.className = "menu-toggle";
             menuButton.type = "button";
             menuButton.textContent = "☰";
-            menuButton.setAttribute("aria-label", "Open navigation menu");
+
+            menuButton.setAttribute("aria-label", "Open menu");
             menuButton.setAttribute("aria-expanded", "false");
 
             header.appendChild(menuButton);
@@ -75,23 +82,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 navLinks.classList.remove("open");
                 menuButton.textContent = "☰";
                 menuButton.setAttribute("aria-expanded", "false");
-                menuButton.setAttribute("aria-label", "Open navigation menu");
+                menuButton.setAttribute("aria-label", "Open menu");
             }
 
-            function openMenu() {
-                navLinks.classList.add("open");
-                menuButton.textContent = "✕";
-                menuButton.setAttribute("aria-expanded", "true");
-                menuButton.setAttribute("aria-label", "Close navigation menu");
+            function toggleMenu() {
+                const isOpen = navLinks.classList.toggle("open");
+
+                menuButton.textContent = isOpen ? "✕" : "☰";
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    String(isOpen)
+                );
+
+                menuButton.setAttribute(
+                    "aria-label",
+                    isOpen ? "Close menu" : "Open menu"
+                );
             }
 
-            menuButton.addEventListener("click", () => {
-                if (navLinks.classList.contains("open")) {
-                    closeMenu();
-                } else {
-                    openMenu();
-                }
-            });
+            menuButton.addEventListener("click", toggleMenu);
 
             navLinks.querySelectorAll("a").forEach(link => {
                 link.addEventListener("click", closeMenu);
@@ -110,10 +120,10 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             window.addEventListener("resize", () => {
-                if (window.innerWidth > 680) {
+                if (window.innerWidth > 760) {
                     closeMenu();
                 }
-            });
+            }, { passive: true });
 
             // =====================================
             // ACTIVE NAVIGATION
@@ -124,6 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             navLinks.querySelectorAll("a").forEach(link => {
                 const linkUrl = new URL(link.href, window.location.href);
+
                 const linkPage =
                     linkUrl.pathname.split("/").pop() || "index.html";
 
@@ -135,44 +146,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // =====================================
-    // SCROLL PROGRESS
-    // =====================================
-
-    const progressBar = document.createElement("div");
-
-    progressBar.className = "scroll-progress";
-    progressBar.setAttribute("aria-hidden", "true");
-
-    document.body.appendChild(progressBar);
-
-    let updatePending = false;
-
-    function updateProgress() {
-        const totalHeight =
-            document.documentElement.scrollHeight - window.innerHeight;
-
-        const progress = totalHeight > 0
-            ? window.scrollY / totalHeight
-            : 0;
-
-        progressBar.style.transform =
-            `scaleX(${Math.min(Math.max(progress, 0), 1)})`;
-
-        updatePending = false;
-    }
-
-    window.addEventListener("scroll", () => {
-        if (!updatePending) {
-            updatePending = true;
-            requestAnimationFrame(updateProgress);
-        }
-    }, { passive: true });
-
-    window.addEventListener("resize", updateProgress, { passive: true });
-
-    updateProgress();
-
-    // =====================================
     // FOOTER YEAR
     // =====================================
 
@@ -181,11 +154,37 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // =====================================
-    // EXTERNAL LINKS
+    // EXTERNAL LINK SECURITY
     // =====================================
 
     document.querySelectorAll('a[target="_blank"]').forEach(link => {
         link.setAttribute("rel", "noopener noreferrer");
     });
 
+    // =====================================
+    // SMOOTH INTERNAL NAVIGATION
+    // =====================================
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener("click", event => {
+            const targetId = link.getAttribute("href");
+
+            if (!targetId || targetId === "#") return;
+
+            const target = document.querySelector(targetId);
+
+            if (!target) return;
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+                behavior: window.matchMedia(
+                    "(prefers-reduced-motion: reduce)"
+                ).matches ? "auto" : "smooth",
+                block: "start"
+            });
+
+            history.replaceState(null, "", targetId);
+        });
+    });
 });
