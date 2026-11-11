@@ -2,10 +2,12 @@
 document.documentElement.classList.add("js");
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    // =====================================
+    // THEME
+    // =====================================
+
     const header = document.querySelector(".nav");
-
-    // ---------- THEME SETUP ----------
-
     const themeKey = "raj-portfolio-theme";
     const themeButton = document.createElement("button");
 
@@ -14,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
         savedTheme = localStorage.getItem(themeKey) || "light";
     } catch (error) {
-        savedTheme = "light";
+        // Continue with default theme.
     }
 
     function applyTheme(theme) {
@@ -34,16 +36,16 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             localStorage.setItem(themeKey, selectedTheme);
         } catch (error) {
-            // Theme still works without local storage.
+            // Theme still works without storage.
         }
     }
 
     if (header) {
         themeButton.className = "theme-toggle";
         themeButton.type = "button";
-        themeButton.setAttribute("aria-label", "Switch theme");
 
         header.appendChild(themeButton);
+        applyTheme(savedTheme);
 
         themeButton.addEventListener("click", () => {
             const currentTheme =
@@ -52,9 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
             applyTheme(currentTheme === "dark" ? "light" : "dark");
         });
 
-        applyTheme(savedTheme);
-
-        // ---------- MOBILE MENU ----------
+        // =====================================
+        // MOBILE MENU
+        // =====================================
 
         const navLinks = header.querySelector("nav");
 
@@ -84,9 +86,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             menuButton.addEventListener("click", () => {
-                navLinks.classList.contains("open")
-                    ? closeMenu()
-                    : openMenu();
+                if (navLinks.classList.contains("open")) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
             });
 
             navLinks.querySelectorAll("a").forEach(link => {
@@ -111,15 +115,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
 
-            // ---------- ACTIVE NAVIGATION ----------
+            // =====================================
+            // ACTIVE NAVIGATION
+            // =====================================
 
-            const currentPage = window.location.pathname
-                .split("/")
-                .pop() || "index.html";
+            const currentPage =
+                window.location.pathname.split("/").pop() || "index.html";
 
             navLinks.querySelectorAll("a").forEach(link => {
                 const linkUrl = new URL(link.href, window.location.href);
-                const linkPage = linkUrl.pathname.split("/").pop() || "index.html";
+                const linkPage =
+                    linkUrl.pathname.split("/").pop() || "index.html";
 
                 if (linkPage === currentPage && !linkUrl.hash) {
                     link.classList.add("active");
@@ -128,63 +134,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // ---------- AUTOMATIC SCROLL REVEAL ----------
-
-    const revealSelectors = [
-        "main > section",
-        ".hero-content",
-        ".page-hero",
-        ".project-card",
-        ".about-card",
-        ".tool-card",
-        ".info-card"
-    ];
-
-    const revealElements = document.querySelectorAll(
-        revealSelectors.join(",")
-    );
-
-    revealElements.forEach(element => {
-        element.classList.add("rv");
-    });
-
-    if (
-        "IntersectionObserver" in window &&
-        !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-        const observer = new IntersectionObserver(
-            entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                        observer.unobserve(entry.target);
-                    }
-                });
-            },
-            {
-                threshold: 0.08,
-                rootMargin: "0px 0px -35px 0px"
-            }
-        );
-
-        revealElements.forEach((element, index) => {
-            if (
-                element.classList.contains("project-card") ||
-                element.classList.contains("about-card") ||
-                element.classList.contains("tool-card")
-            ) {
-                element.style.transitionDelay = `${(index % 4) * 80}ms`;
-            }
-
-            observer.observe(element);
-        });
-    } else {
-        revealElements.forEach(element => {
-            element.classList.add("visible");
-        });
-    }
-
-    // ---------- SCROLL PROGRESS BAR ----------
+    // =====================================
+    // SCROLL PROGRESS
+    // =====================================
 
     const progressBar = document.createElement("div");
 
@@ -193,41 +145,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.body.appendChild(progressBar);
 
-    let scrollUpdatePending = false;
+    let updatePending = false;
 
-    function updateScrollProgress() {
-        const scrollableHeight =
+    function updateProgress() {
+        const totalHeight =
             document.documentElement.scrollHeight - window.innerHeight;
 
-        const progress = scrollableHeight > 0
-            ? (window.scrollY / scrollableHeight) * 100
+        const progress = totalHeight > 0
+            ? window.scrollY / totalHeight
             : 0;
 
-        progressBar.style.width = `${Math.min(progress, 100)}%`;
+        progressBar.style.transform =
+            `scaleX(${Math.min(Math.max(progress, 0), 1)})`;
 
-        scrollUpdatePending = false;
+        updatePending = false;
     }
 
     window.addEventListener("scroll", () => {
-        if (!scrollUpdatePending) {
-            scrollUpdatePending = true;
-            window.requestAnimationFrame(updateScrollProgress);
+        if (!updatePending) {
+            updatePending = true;
+            requestAnimationFrame(updateProgress);
         }
     }, { passive: true });
 
-    window.addEventListener("resize", updateScrollProgress);
+    window.addEventListener("resize", updateProgress, { passive: true });
 
-    updateScrollProgress();
+    updateProgress();
 
-    // ---------- FOOTER YEAR ----------
+    // =====================================
+    // FOOTER YEAR
+    // =====================================
 
     document.querySelectorAll("[data-year]").forEach(element => {
         element.textContent = new Date().getFullYear();
     });
 
-    // ---------- EXTERNAL LINKS ----------
+    // =====================================
+    // EXTERNAL LINKS
+    // =====================================
 
     document.querySelectorAll('a[target="_blank"]').forEach(link => {
         link.setAttribute("rel", "noopener noreferrer");
     });
+
 });
