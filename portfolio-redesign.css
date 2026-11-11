@@ -1,15 +1,16 @@
 
 /* =========================================
-   19. PREMIUM SMOOTH UI EXPERIENCE
+   PREMIUM SMOOTH UI EXPERIENCE
    ========================================= */
 
-/* Smoother page scrolling */
+/* Native browser scrolling */
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 90px;
+    overscroll-behavior-y: contain;
 }
 
-/* Smooth transitions across interactive elements */
+/* Lightweight interactive transitions */
 a,
 button,
 .project-card,
@@ -19,49 +20,47 @@ button,
 .info-card {
     -webkit-tap-highlight-color: transparent;
     transition:
-        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-        opacity 0.35s ease,
-        border-color 0.35s ease,
-        background-color 0.35s ease,
-        color 0.35s ease,
-        box-shadow 0.35s ease;
+        transform 0.25s ease,
+        opacity 0.25s ease,
+        border-color 0.25s ease,
+        background-color 0.25s ease,
+        color 0.25s ease;
 }
 
-/* Better project card hover */
+/* Project cards */
 .project-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 20px 45px rgba(50, 30, 20, 0.12);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(50, 30, 20, 0.08);
 }
 
 .project-card img {
-    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 0.35s ease;
 }
 
 .project-card:hover img {
-    transform: scale(1.035);
+    transform: scale(1.02);
 }
 
-/* Smooth button interaction */
+/* Buttons */
 .btn {
     transition:
-        transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
-        background 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
 }
 
 .btn:active {
-    transform: scale(0.97);
+    transform: scale(0.98);
 }
 
-/* Reveal animation preparation */
+/* Scroll reveal */
 .js .rv {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translateY(12px);
     transition:
-        opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: opacity, transform;
+        opacity 0.4s ease-out,
+        transform 0.4s ease-out;
+    will-change: auto;
 }
 
 .js .rv.visible {
@@ -69,20 +68,42 @@ button,
     transform: translateY(0);
 }
 
-/* Scroll progress indicator */
+/* Scroll progress bar */
 .scroll-progress {
     position: fixed;
     top: 0;
     left: 0;
     z-index: 2000;
-    width: 0%;
+    width: 100%;
     height: 3px;
     background: var(--accent);
     pointer-events: none;
-    transition: width 0.08s linear;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: none;
 }
 
-/* Respect accessibility preferences */
+/* Mobile performance */
+@media (max-width: 680px) {
+    .project-card:hover {
+        transform: none;
+    }
+
+    .project-card:hover img {
+        transform: none;
+    }
+
+    .js .rv {
+        transition-duration: 0.3s;
+    }
+
+    .project-card,
+    .project-card img {
+        transition-duration: 0.2s;
+    }
+}
+
+/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto !important;
@@ -99,20 +120,6 @@ button,
     .js .rv {
         opacity: 1;
         transform: none;
-    }
-}
-
-/* Mobile performance */
-@media (max-width: 680px) {
-    .project-card:hover {
-        transform: none;
-    }
-
-    .project-card:hover img {
-        transform: none;
-    }
-
-    .js .rv {
-        transition-duration: 0.55s;
+        transition: none;
     }
 }
