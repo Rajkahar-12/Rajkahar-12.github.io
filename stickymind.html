@@ -2,145 +2,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#faf7f2">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f8f5f0">
 
-<title>StickyMind — Raj Kahar</title>
-<meta name="description" content="StickyMind is a digital space to organize thoughts, notes and reminders.">
+    <title>StickyMind — Raj Kahar</title>
+    <meta name="description" content="StickyMind is a productivity web application built by Raj Kahar using Python, Flask and SQLite.">
 
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="portfolio-redesign.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="portfolio-redesign.css">
 </head>
 
 <body>
 
 <header class="nav">
+
     <a class="brand" href="index.html">
-        raj<span>kahar</span><i>®</i>
+        raj<span>kahar</span>
     </a>
 
     <nav aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="work.html">Work</a>
         <a href="about.html">About</a>
-        <a href="index.html#contact">Contact ↗</a>
+        <a href="index.html#contact">Contact</a>
     </nav>
+
 </header>
 
 <main>
 
-    <section class="wrap proj">
+    <!-- PROJECT INTRO -->
 
-        <p class="mono eyebrow">PROJECT / 01 — PRODUCTIVITY</p>
+    <section class="proj">
 
-        <h1>Sticky<em>Mind.</em></h1>
+        <span class="eyebrow">PROJECT 01 / PRODUCTIVITY</span>
 
-        <p class="lede">
-            A simple digital space to capture thoughts, organize notes
+        <h1>
+            Sticky<span class="accent">Mind.</span>
+        </h1>
+
+        <p>
+            A digital space to capture thoughts, organize notes,
             and keep important reminders close.
         </p>
 
         <div class="facts">
+
             <div>
-                <span class="mono">CATEGORY</span>
-                <strong>Productivity / Web App</strong>
+                <span>TYPE</span>
+                <strong>Web Application</strong>
             </div>
 
             <div>
-                <span class="mono">BUILT WITH</span>
+                <span>TECHNOLOGIES</span>
                 <strong>Python · Flask · SQLite</strong>
             </div>
 
             <div>
-                <span class="mono">STATUS</span>
-                <strong>Live Project</strong>
+                <span>STATUS</span>
+                <strong>Live</strong>
             </div>
+
         </div>
 
         <div class="proj-actions">
-            <a class="btn" href="https://stickymind.onrender.com" target="_blank" rel="noopener noreferrer">
-                Visit StickyMind ↗
+
+            <a
+                class="btn primary"
+                href="https://stickymind.onrender.com"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Visit live website ↗
             </a>
 
-            <a class="text-link" href="https://github.com/Rajkahar-12/StickyMind" target="_blank" rel="noopener noreferrer">
-                View source code ↗
+            <a
+                class="btn"
+                href="https://github.com/Rajkahar-12/StickyMind"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GitHub source ↗
             </a>
+
         </div>
 
         <div class="shot big">
-            <img src="assets/projects/stickymind.png" alt="StickyMind application preview" onerror="this.style.display='none'">
-            <span>StickyMind ✳</span>
+
+            <img
+                src="assets/projects/stickymind.png"
+                alt="StickyMind application screenshot"
+            >
+
         </div>
 
     </section>
 
-    <section class="wrap" style="padding-bottom:5rem;">
 
-        <div class="section-kicker">
-            <span class="mono">01 / THE IDEA</span>
-            <span class="kicker-line"></span>
+    <!-- ABOUT THE PROJECT -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">01 / THE IDEA</span>
+
+            <h2>
+                Your thoughts,<br>
+                <span class="accent">in one place.</span>
+            </h2>
+
         </div>
 
-        <h2 class="head">An organized space for everyday thoughts.</h2>
+        <div class="about-content">
 
-        <p class="lede">
-            StickyMind is a productivity web application built around
-            a simple idea: keeping important thoughts, notes and
-            reminders organized in one place.
-        </p>
+            <p>
+                StickyMind is a productivity web application designed
+                to help users organize their everyday thoughts,
+                notes, and reminders.
+            </p>
+
+            <p>
+                The idea was to create a simple digital space where
+                important information can be stored and accessed
+                without unnecessary complexity.
+            </p>
+
+        </div>
 
     </section>
 
-    <section class="wrap" style="padding-bottom:5rem;">
 
-        <div class="section-kicker">
-            <span class="mono">02 / THE BUILD</span>
-            <span class="kicker-line"></span>
+    <!-- DEVELOPMENT -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">02 / DEVELOPMENT</span>
+
+            <h2>
+                Built to learn.<br>
+                <span class="accent">Made to work.</span>
+            </h2>
+
         </div>
 
-        <h2 class="head">Learning by building.</h2>
+        <div class="about-content">
 
-        <p class="lede">
-            Building StickyMind gave me practical experience with
-            backend development, application structure, databases
-            and connecting frontend interfaces with backend APIs.
-        </p>
+            <p>
+                I built StickyMind using Python and Flask for
+                the backend, with SQLite for data storage.
+            </p>
+
+            <p>
+                Working on this project helped me understand
+                backend development, database operations,
+                application structure, and connecting a frontend
+                interface with backend APIs.
+            </p>
+
+        </div>
+
+        <div class="project-tags">
+            <span>Python</span>
+            <span>Flask</span>
+            <span>SQLite</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+        </div>
 
     </section>
 
-    <section class="wrap next" style="padding-bottom:6rem;">
 
-        <p class="mono eyebrow">NEXT PROJECT</p>
+    <!-- NEXT PROJECT -->
 
-        <h2>Meet <em>RashAI.</em></h2>
+    <section class="contact-section">
 
-        <p class="lede">
-            A study companion built around AI and learning.
-        </p>
+        <div class="contact-box">
 
-        <a class="btn" href="rashai.html">Explore RashAI ↗</a>
+            <span class="eyebrow">NEXT PROJECT / 02</span>
 
-        <p style="margin-top:2rem;">
-            <a class="text-link" href="work.html">← Back to all projects</a>
-        </p>
+            <h2>
+                Explore <span class="accent">RashAI.</span>
+            </h2>
+
+            <p>
+                An AI-powered study companion designed to make
+                learning easier.
+            </p>
+
+            <div class="contact-links">
+
+                <a href="rashai.html">
+                    Next project ↗
+                </a>
+
+                <a href="work.html">
+                    All projects ↗
+                </a>
+
+            </div>
+
+        </div>
 
     </section>
 
 </main>
 
-<footer class="site-footer wrap">
-    <a class="brand" href="index.html">raj<span>kahar</span><i>®</i></a>
-    <p class="mono">DESIGNED &amp; BUILT WITH CURIOSITY.</p>
-    <p class="mono">© <span id="year">2026</span> RAJ KAHAR</p>
+
+<footer>
+
+    <a class="brand" href="index.html">
+        raj<span>kahar</span>
+    </a>
+
+    <p>Designed &amp; built with curiosity.</p>
+
+    <p>© <span data-year></span> Raj Kahar</p>
+
 </footer>
+
 
 <script src="script.js" defer></script>
 
