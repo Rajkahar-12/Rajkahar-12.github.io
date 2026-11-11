@@ -1,70 +1,149 @@
-/* rajkahar portfolio: page transitions, reveals, cursor */
-(function () {
-  "use strict";
-  var d = document, h = d.documentElement;
-  var rm = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var fine = matchMedia("(hover: hover) and (pointer: fine)").matches;
-  h.classList.add("js");
+/* ==========================================
+   RAJ KAHAR — PORTFOLIO JAVASCRIPT
+   Theme, navigation and animations
+   ========================================== */
 
-  /* page transition curtain */
-  var c = d.createElement("div");
-  c.className = "curtain";
-  c.setAttribute("aria-hidden", "true");
-  if (!rm) {
-    c.classList.add("on");
-    d.body.appendChild(c);
-    requestAnimationFrame(function () {
-      requestAnimationFrame(function () { c.classList.remove("on"); });
-    });
-    d.addEventListener("click", function (e) {
-      var a = e.target.closest("a");
-      if (!a || e.metaKey || e.ctrlKey || e.shiftKey || a.target === "_blank") return;
-      var u = a.getAttribute("href");
-      if (!u || u.charAt(0) === "#" || /^(mailto:|https?:)/.test(u)) return;
-      e.preventDefault();
-      c.classList.add("on");
-      setTimeout(function () { location.href = u; }, 450);
-    });
-    addEventListener("pageshow", function (e) {
-      if (e.persisted) c.classList.remove("on");
-    });
-  }
+document.documentElement.classList.add("js");
 
-  /* marquee: duplicate content for a seamless loop */
-  var t = d.querySelector(".mq__t");
-  if (t) t.innerHTML += t.innerHTML;
+/* ---------- THEME SYSTEM ---------- */
 
-  /* reveal on scroll */
-  var els = d.querySelectorAll(".rv");
-  if (rm || !("IntersectionObserver" in window)) {
-    els.forEach(function (el) { el.classList.add("in"); });
-  } else {
-    var io = new IntersectionObserver(function (en) {
-      en.forEach(function (x) {
-        if (x.isIntersecting) { x.target.classList.add("in"); io.unobserve(x.target); }
-      });
-    }, { threshold: 0.12 });
-    els.forEach(function (el) { io.observe(el); });
-  }
+const THEME_KEY = "raj-portfolio-theme";
 
-  /* custom cursor (mouse only) */
-  if (fine && !rm) {
-    var dot = d.createElement("div"), ring = d.createElement("div");
-    dot.className = "cur-dot"; ring.className = "cur-ring";
-    d.body.appendChild(ring); d.body.appendChild(dot);
-    var x = 0, y = 0, rx = 0, ry = 0;
-    addEventListener("mousemove", function (e) {
-      x = e.clientX; y = e.clientY;
-      dot.style.transform = "translate(" + x + "px," + y + "px)";
-      h.classList.add("cur");
+function applyTheme(theme) {
+    const selectedTheme = theme === "dark" ? "dark" : "light";
+
+    document.documentElement.setAttribute("data-theme", selectedTheme);
+
+    const button = document.querySelector(".theme-toggle");
+
+    if (button) {
+        button.textContent =
+            selectedTheme === "dark" ? "☀ Light mode" : "☾ Dark mode";
+
+        button.setAttribute(
+            "aria-label",
+            selectedTheme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+        );
+    }
+
+    try {
+        localStorage.setItem(THEME_KEY, selectedTheme);
+    } catch (error) {
+        console.warn("Theme preference could not be saved.");
+    }
+}
+
+let savedTheme = "light";
+
+try {
+    savedTheme = localStorage.getItem(THEME_KEY) || "light";
+} catch (error) {
+    console.warn("Saved theme could not be loaded.");
+}
+
+applyTheme(savedTheme);
+
+/* ---------- CREATE THEME BUTTON ---------- */
+
+const navigation = document.querySelector(".nav");
+
+if (navigation && !document.querySelector(".theme-toggle")) {
+    const themeButton = document.createElement("button");
+
+    themeButton.type = "button";
+    themeButton.className = "theme-toggle";
+    themeButton.textContent = "☾ Dark mode";
+
+    themeButton.style.cssText = `
+        padding: 9px 13px;
+        border: 1px solid var(--border);
+        border-radius: 30px;
+        background: var(--surface);
+        color: var(--text);
+        font-family: var(--mono);
+        font-size: 11px;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: background .25s ease, color .25s ease;
+    `;
+
+    navigation.appendChild(themeButton);
+
+    applyTheme(
+        document.documentElement.getAttribute("data-theme") || "light"
+    );
+}
+
+document.addEventListener("click", function (event) {
+    const button = event.target.closest(".theme-toggle");
+
+    if (!button) return;
+
+    const currentTheme =
+        document.documentElement.getAttribute("data-theme");
+
+    applyTheme(currentTheme === "dark" ? "light" : "dark");
+});
+
+/* ---------- SCROLL REVEAL ---------- */
+
+const revealElements = document.querySelectorAll(".rv");
+
+if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(
+        function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("in");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.12,
+            rootMargin: "0px 0px -35px 0px"
+        }
+    );
+
+    revealElements.forEach(function (element) {
+        revealObserver.observe(element);
     });
-    (function loop() {
-      rx += (x - rx) * 0.18; ry += (y - ry) * 0.18;
-      ring.style.transform = "translate(" + rx + "px," + ry + "px)";
-      requestAnimationFrame(loop);
-    })();
-    d.addEventListener("mouseover", function (e) {
-      ring.classList.toggle("big", !!e.target.closest("a,button"));
+} else {
+    revealElements.forEach(function (element) {
+        element.classList.add("in");
     });
-  }
-})();
+}
+
+/* ---------- ACTIVE NAVIGATION ---------- */
+
+const currentPage =
+    window.location.pathname.split("/").pop() || "index.html";
+
+document.querySelectorAll(".nav a").forEach(function (link) {
+    const href = link.getAttribute("href");
+
+    if (!href) return;
+
+    const linkPage = href.split("#")[0] || "index.html";
+
+    if (
+        linkPage === currentPage &&
+        !href.startsWith("#")
+    ) {
+        link.setAttribute("aria-current", "page");
+    }
+});
+
+/* ---------- FOOTER YEAR ---------- */
+
+const yearElement = document.getElementById("year");
+
+if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+}
+
+/* ---------- CLOSE EXTERNAL LINK SAFETY ---------- */
+
+document.querySelectorAll('a[target="_blank"]').forEach(function (link) {
+    link.setAttribute("rel", "noopener noreferrer");
+});
