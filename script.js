@@ -1,149 +1,196 @@
-/* ==========================================
-   RAJ KAHAR — PORTFOLIO JAVASCRIPT
-   Theme, navigation and animations
-   ========================================== */
 
 document.documentElement.classList.add("js");
 
-/* ---------- THEME SYSTEM ---------- */
+document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector(".nav");
 
-const THEME_KEY = "raj-portfolio-theme";
+    if (!header) return;
 
-function applyTheme(theme) {
-    const selectedTheme = theme === "dark" ? "dark" : "light";
+    // ---------- THEME SETUP ----------
 
-    document.documentElement.setAttribute("data-theme", selectedTheme);
+    const themeKey = "raj-portfolio-theme";
 
-    const button = document.querySelector(".theme-toggle");
-
-    if (button) {
-        button.textContent =
-            selectedTheme === "dark" ? "☀ Light mode" : "☾ Dark mode";
-
-        button.setAttribute(
-            "aria-label",
-            selectedTheme === "dark" ? "Switch to light mode" : "Switch to dark mode"
-        );
-    }
+    let savedTheme = "light";
 
     try {
-        localStorage.setItem(THEME_KEY, selectedTheme);
+        savedTheme = localStorage.getItem(themeKey) || "light";
     } catch (error) {
-        console.warn("Theme preference could not be saved.");
+        savedTheme = "light";
     }
-}
 
-let savedTheme = "light";
+    function applyTheme(theme) {
+        const selectedTheme = theme === "dark" ? "dark" : "light";
 
-try {
-    savedTheme = localStorage.getItem(THEME_KEY) || "light";
-} catch (error) {
-    console.warn("Saved theme could not be loaded.");
-}
+        document.documentElement.setAttribute(
+            "data-theme",
+            selectedTheme
+        );
 
-applyTheme(savedTheme);
+        if (themeButton) {
+            themeButton.textContent =
+                selectedTheme === "dark" ? "☀" : "☾";
 
-/* ---------- CREATE THEME BUTTON ---------- */
+            themeButton.setAttribute(
+                "aria-label",
+                selectedTheme === "dark"
+                    ? "Switch to light mode"
+                    : "Switch to dark mode"
+            );
+        }
 
-const navigation = document.querySelector(".nav");
+        try {
+            localStorage.setItem(themeKey, selectedTheme);
+        } catch (error) {
+            // Theme still works without local storage.
+        }
+    }
 
-if (navigation && !document.querySelector(".theme-toggle")) {
+    // ---------- NAVIGATION ----------
+
+    const navLinks = header.querySelector("nav");
+
+    if (!navLinks) return;
+
+    // Create theme button.
     const themeButton = document.createElement("button");
 
-    themeButton.type = "button";
     themeButton.className = "theme-toggle";
-    themeButton.textContent = "☾ Dark mode";
+    themeButton.type = "button";
+    themeButton.setAttribute("aria-label", "Switch theme");
 
-    themeButton.style.cssText = `
-        padding: 9px 13px;
-        border: 1px solid var(--border);
-        border-radius: 30px;
-        background: var(--surface);
-        color: var(--text);
-        font-family: var(--mono);
-        font-size: 11px;
-        cursor: pointer;
-        white-space: nowrap;
-        transition: background .25s ease, color .25s ease;
-    `;
+    header.appendChild(themeButton);
 
-    navigation.appendChild(themeButton);
+    themeButton.addEventListener("click", () => {
+        const currentTheme =
+            document.documentElement.getAttribute("data-theme");
 
-    applyTheme(
-        document.documentElement.getAttribute("data-theme") || "light"
-    );
-}
-
-document.addEventListener("click", function (event) {
-    const button = event.target.closest(".theme-toggle");
-
-    if (!button) return;
-
-    const currentTheme =
-        document.documentElement.getAttribute("data-theme");
-
-    applyTheme(currentTheme === "dark" ? "light" : "dark");
-});
-
-/* ---------- SCROLL REVEAL ---------- */
-
-const revealElements = document.querySelectorAll(".rv");
-
-if ("IntersectionObserver" in window) {
-    const revealObserver = new IntersectionObserver(
-        function (entries, observer) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("in");
-                    observer.unobserve(entry.target);
-                }
-            });
-        },
-        {
-            threshold: 0.12,
-            rootMargin: "0px 0px -35px 0px"
-        }
-    );
-
-    revealElements.forEach(function (element) {
-        revealObserver.observe(element);
+        applyTheme(currentTheme === "dark" ? "light" : "dark");
     });
-} else {
-    revealElements.forEach(function (element) {
-        element.classList.add("in");
-    });
-}
 
-/* ---------- ACTIVE NAVIGATION ---------- */
+    applyTheme(savedTheme);
 
-const currentPage =
-    window.location.pathname.split("/").pop() || "index.html";
+    // ---------- MOBILE MENU ----------
 
-document.querySelectorAll(".nav a").forEach(function (link) {
-    const href = link.getAttribute("href");
+    const menuButton = document.createElement("button");
 
-    if (!href) return;
+    menuButton.className = "menu-toggle";
+    menuButton.type = "button";
+    menuButton.textContent = "☰";
+    menuButton.setAttribute("aria-label", "Open navigation menu");
+    menuButton.setAttribute("aria-expanded", "false");
 
-    const linkPage = href.split("#")[0] || "index.html";
+    header.appendChild(menuButton);
 
-    if (
-        linkPage === currentPage &&
-        !href.startsWith("#")
-    ) {
-        link.setAttribute("aria-current", "page");
+    function closeMenu() {
+        navLinks.classList.remove("open");
+
+        menuButton.textContent = "☰";
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation menu");
     }
-});
 
-/* ---------- FOOTER YEAR ---------- */
+    function openMenu() {
+        navLinks.classList.add("open");
 
-const yearElement = document.getElementById("year");
+        menuButton.textContent = "✕";
+        menuButton.setAttribute("aria-expanded", "true");
+        menuButton.setAttribute("aria-label", "Close navigation menu");
+    }
 
-if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-}
+    menuButton.addEventListener("click", () => {
+        const isOpen = navLinks.classList.contains("open");
 
-/* ---------- CLOSE EXTERNAL LINK SAFETY ---------- */
+        if (isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
 
-document.querySelectorAll('a[target="_blank"]').forEach(function (link) {
-    link.setAttribute("rel", "noopener noreferrer");
+    // Close menu after clicking a navigation link.
+    navLinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", closeMenu);
+    });
+
+    // Close menu when clicking outside.
+    document.addEventListener("click", event => {
+        if (!header.contains(event.target)) {
+            closeMenu();
+        }
+    });
+
+    // Close menu with Escape key.
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") {
+            closeMenu();
+        }
+    });
+
+    // Close menu when switching to desktop layout.
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 680) {
+            closeMenu();
+        }
+    });
+
+    // ---------- ACTIVE NAVIGATION ----------
+
+    const currentPage = window.location.pathname
+        .split("/")
+        .pop() || "index.html";
+
+    navLinks.querySelectorAll("a").forEach(link => {
+        const linkUrl = new URL(link.href, window.location.href);
+
+        const linkPage = linkUrl.pathname
+            .split("/")
+            .pop() || "index.html";
+
+        if (
+            linkPage === currentPage &&
+            !linkUrl.hash
+        ) {
+            link.classList.add("active");
+        }
+    });
+
+    // ---------- SCROLL REVEAL ----------
+
+    const revealElements = document.querySelectorAll(".rv");
+
+    if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.08
+            }
+        );
+
+        revealElements.forEach(element => {
+            observer.observe(element);
+        });
+    } else {
+        revealElements.forEach(element => {
+            element.classList.add("visible");
+        });
+    }
+
+    // ---------- FOOTER YEAR ----------
+
+    document.querySelectorAll("[data-year]").forEach(element => {
+        element.textContent = new Date().getFullYear();
+    });
+
+    // ---------- EXTERNAL LINKS ----------
+
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
+        link.setAttribute("rel", "noopener noreferrer");
+    });
 });
