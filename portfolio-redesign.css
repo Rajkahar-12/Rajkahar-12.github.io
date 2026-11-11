@@ -1,11 +1,13 @@
 
-/* =========================================
-   RAJ KAHAR — PREMIUM PORTFOLIO REDESIGN
-   ========================================= */
+/* ==========================================
+   RAJ KAHAR — PREMIUM UI EXPERIENCE
+   Lightweight • Responsive • Smooth
+   ========================================== */
 
-/* ---------- COLOR SYSTEM ---------- */
+/* ---------- THEME ---------- */
 
 :root {
+    color-scheme: light;
     --bg: #f8f5f0;
     --surface: #fffdf9;
     --surface-soft: #f0ebe4;
@@ -14,13 +16,14 @@
     --accent: #b8323b;
     --accent-dark: #92242c;
     --border: #e8ded6;
-    --nav-bg: rgba(248, 245, 240, 0.88);
-    --shadow: 0 15px 45px rgba(54, 35, 28, 0.07);
+    --nav-bg: rgba(248, 245, 240, .94);
+    --shadow: 0 12px 35px rgba(54, 35, 28, .06);
     --radius: 18px;
-    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease: cubic-bezier(.22, 1, .36, 1);
 }
 
 html[data-theme="dark"] {
+    color-scheme: dark;
     --bg: #151312;
     --surface: #201c1a;
     --surface-soft: #292321;
@@ -29,11 +32,15 @@ html[data-theme="dark"] {
     --accent: #ef7378;
     --accent-dark: #d85b63;
     --border: #39302c;
-    --nav-bg: rgba(21, 19, 18, 0.88);
-    --shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+    --nav-bg: rgba(21, 19, 18, .94);
+    --shadow: 0 12px 35px rgba(0, 0, 0, .18);
 }
 
-/* ---------- GLOBAL ---------- */
+/* ---------- RESET & GLOBAL ---------- */
+
+* {
+    box-sizing: border-box;
+}
 
 html {
     background: var(--bg);
@@ -43,23 +50,22 @@ html {
 }
 
 body {
+    margin: 0;
     background: var(--bg);
     color: var(--text);
     font-family: "DM Sans", sans-serif;
     font-size: 15px;
     line-height: 1.75;
-    overflow-x: clip;
-    transition: background-color 0.25s ease, color 0.25s ease;
+    overflow-x: hidden;
+    transition: background-color .2s ease, color .2s ease;
 }
 
-/* Remove expensive grain overlay from original CSS */
 body::after {
     display: none !important;
 }
 
 main {
     width: 100%;
-    flex: 1;
 }
 
 a {
@@ -78,7 +84,7 @@ img {
 
 ::selection {
     background: var(--accent);
-    color: #fff;
+    color: white;
 }
 
 :focus-visible {
@@ -93,24 +99,21 @@ img {
     top: 14px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 1000;
+
     width: min(1160px, calc(100% - 40px));
     min-height: 66px;
     padding: 12px 24px;
-    z-index: 1000;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 18px;
 
     background: var(--nav-bg);
     border: 1px solid var(--border);
     border-radius: 18px;
-
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-
-    box-shadow: 0 5px 25px rgba(40, 25, 20, 0.04);
+    box-shadow: 0 5px 22px rgba(40, 25, 20, .04);
 }
 
 .brand {
@@ -137,9 +140,9 @@ img {
     color: var(--muted);
     font-family: "DM Mono", monospace;
     font-size: 11px;
-    letter-spacing: 0.08em;
+    letter-spacing: .08em;
     text-transform: uppercase;
-    transition: color 0.2s ease;
+    transition: color .2s ease;
 }
 
 .nav nav a::after {
@@ -152,7 +155,7 @@ img {
     background: var(--accent);
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 0.25s ease;
+    transition: transform .25s var(--ease);
 }
 
 .nav nav a:hover,
@@ -167,21 +170,35 @@ img {
     transform: scaleX(1);
 }
 
-/* Theme and mobile buttons */
+/* Theme and menu buttons */
 
 .theme-toggle,
 .menu-toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
+
     width: 38px;
     height: 38px;
+
     border: 1px solid var(--border);
     border-radius: 50%;
     background: var(--surface);
     color: var(--text);
     cursor: pointer;
-    transition: background 0.2s ease, color 0.2s ease;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+}
+
+.theme-toggle:hover,
+.menu-toggle:hover {
+    border-color: var(--accent);
+    transform: rotate(8deg);
 }
 
 .theme-toggle {
@@ -208,6 +225,19 @@ img {
 
 .hero-content {
     max-width: 760px;
+    animation: hero-enter .7s var(--ease) both;
+}
+
+@keyframes hero-enter {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .eyebrow {
@@ -216,7 +246,7 @@ img {
     color: var(--accent);
     font-family: "DM Mono", monospace;
     font-size: 11px;
-    letter-spacing: 0.13em;
+    letter-spacing: .13em;
     text-transform: uppercase;
 }
 
@@ -269,7 +299,7 @@ h3 {
     color: var(--muted);
     font-family: "DM Mono", monospace;
     font-size: 10px;
-    letter-spacing: 0.1em;
+    letter-spacing: .1em;
 }
 
 /* ---------- BUTTONS ---------- */
@@ -285,7 +315,6 @@ h3 {
 
     border: 1px solid var(--border);
     border-radius: 50px;
-
     background: var(--surface);
     color: var(--text);
 
@@ -293,10 +322,10 @@ h3 {
     font-weight: 600;
 
     transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease,
+        transform .2s var(--ease);
 }
 
 .btn:hover {
@@ -324,10 +353,10 @@ h3 {
 }
 
 .btn:active {
-    transform: scale(0.98);
+    transform: scale(.98);
 }
 
-/* ---------- GENERAL SECTIONS ---------- */
+/* ---------- SECTIONS ---------- */
 
 .section {
     width: min(1120px, calc(100% - 60px));
@@ -349,7 +378,7 @@ h3 {
     font-family: "Instrument Serif", Georgia, serif;
     font-size: clamp(36px, 5vw, 55px);
     line-height: 1.08;
-    letter-spacing: -0.8px;
+    letter-spacing: -.8px;
 }
 
 .section-heading > p {
@@ -373,7 +402,7 @@ h3 {
     line-height: 1.95;
 }
 
-/* ---------- PROJECT GRID ---------- */
+/* ---------- PROJECT CARDS ---------- */
 
 .projects-grid {
     display: grid;
@@ -387,17 +416,16 @@ h3 {
 
     border: 1px solid var(--border);
     border-radius: var(--radius);
-
     background: var(--surface);
 
     transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
+        transform .25s var(--ease),
+        border-color .25s ease,
+        box-shadow .25s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     border-color: var(--accent);
     box-shadow: var(--shadow);
 }
@@ -486,7 +514,10 @@ h3 {
     border: 1px solid var(--border);
     border-radius: 15px;
     background: var(--surface);
-    transition: border-color 0.2s ease, transform 0.2s ease;
+
+    transition:
+        border-color .2s ease,
+        transform .2s var(--ease);
 }
 
 .about-card:hover {
@@ -506,12 +537,14 @@ h3 {
     line-height: 1.8;
 }
 
-/* ---------- TOOL LIST ---------- */
+/* ---------- SKILLS ---------- */
 
 .tool-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     border-top: 1px solid var(--border);
+    list-style: none;
+    padding: 0;
 }
 
 .tool-list li {
@@ -578,7 +611,7 @@ h3 {
     color: var(--accent);
     font-family: "DM Mono", monospace;
     font-size: 10px;
-    letter-spacing: 0.1em;
+    letter-spacing: .1em;
 }
 
 .facts strong {
@@ -638,7 +671,7 @@ h3 {
     color: var(--accent);
     font-size: 13px;
     font-weight: 600;
-    transition: color 0.2s ease;
+    transition: color .2s ease;
 }
 
 .contact-links a:hover {
@@ -687,7 +720,6 @@ footer p {
 /* ---------- MOBILE ---------- */
 
 @media (max-width: 760px) {
-
     .nav {
         top: 10px;
         width: calc(100% - 24px);
@@ -780,10 +812,7 @@ footer p {
         font-size: clamp(43px, 11vw, 60px);
     }
 
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
-
+    .about-grid,
     .tool-list {
         grid-template-columns: 1fr;
     }
@@ -817,7 +846,6 @@ footer p {
 /* ---------- SMALL PHONES ---------- */
 
 @media (max-width: 380px) {
-
     .hero {
         padding-inline: 20px;
     }
@@ -843,7 +871,6 @@ footer p {
 /* ---------- REDUCED MOTION ---------- */
 
 @media (prefers-reduced-motion: reduce) {
-
     html {
         scroll-behavior: auto !important;
     }
