@@ -4,146 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f7f5f2">
+    <meta name="theme-color" content="#0B0B0A">
 
     <title>RashAI — Raj Kahar</title>
-    <meta name="description" content="RashAI is an AI-powered study companion designed to make learning easier.">
+    <meta name="description" content="Explore RashAI, an AI-powered study companion built by Raj Kahar.">
 
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="portfolio-redesign.css">
-
-    <style>
-        .project-hero {
-            padding: 175px 0 65px;
-        }
-
-        .project-hero h1 {
-            font-size: clamp(45px, 8vw, 76px);
-            letter-spacing: -3px;
-            line-height: 1.05;
-            margin: 20px 0;
-        }
-
-        .project-hero p {
-            max-width: 650px;
-            color: var(--muted);
-            font-size: 16px;
-            line-height: 1.8;
-        }
-
-        .project-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 25px;
-        }
-
-        .project-meta span {
-            padding: 8px 13px;
-            border-radius: 30px;
-            border: 1px solid var(--border);
-            font-size: 12px;
-            color: var(--muted);
-        }
-
-        .project-preview {
-            width: 100%;
-            overflow: hidden;
-            border-radius: 22px;
-            border: 1px solid var(--border);
-            background: var(--surface);
-            margin: 15px 0 65px;
-        }
-
-        .project-preview img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        .project-details {
-            display: grid;
-            grid-template-columns: 1.3fr .7fr;
-            gap: 35px;
-        }
-
-        .project-description h2 {
-            font-size: 27px;
-            letter-spacing: -1px;
-        }
-
-        .project-description p {
-            color: var(--muted);
-            font-size: 14px;
-            line-height: 1.9;
-        }
-
-        .project-info {
-            padding: 25px;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            background: var(--surface);
-            height: fit-content;
-        }
-
-        .project-info h3 {
-            margin-top: 0;
-            font-size: 16px;
-        }
-
-        .project-info p {
-            color: var(--muted);
-            font-size: 13px;
-            margin-bottom: 20px;
-        }
-
-        .project-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 30px;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-bottom: 25px;
-            color: var(--muted);
-            font-size: 13px;
-            text-decoration: none;
-        }
-
-        @media (max-width: 700px) {
-            .project-hero {
-                padding-top: 140px;
-            }
-
-            .project-hero h1 {
-                letter-spacing: -2px;
-            }
-
-            .project-details {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
 <header class="nav">
 
-    <a class="brand" href="index.html">
-        raj<span>kahar</span>
+    <a href="index.html" class="brand">
+        raj<span style="color:var(--ac)">.</span>
     </a>
 
-    <nav aria-label="Primary navigation">
+    <nav aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="work.html">Work</a>
         <a href="about.html">About</a>
@@ -155,161 +39,323 @@
 
 <main>
 
-    <section class="project-hero">
+    <!-- PROJECT HERO -->
 
-        <a href="work.html" class="back-link">
-            ← Back to projects
+    <section class="hero wrap proj">
+
+        <a href="work.html" class="link rv">
+            ← Back to selected work
         </a>
 
-        <span class="eyebrow">PROJECT 02 / AI &amp; EDUCATION</span>
+        <span class="mono eyebrow rv" style="--d:.1s">
+            PROJECT 02 / AI & EDUCATION
+        </span>
 
-        <h1>
-            Rash<span class="accent">AI.</span>
+        <h1 class="rv" style="--d:.2s">
+            Rash<em>AI.</em>
         </h1>
 
-        <p>
-            An AI-powered study companion designed to make
-            learning more interactive, accessible and convenient.
+        <p class="lede rv" style="--d:.3s">
+            A study companion designed to make learning
+            more interactive, accessible and engaging
+            through AI-powered assistance.
         </p>
 
-        <div class="project-meta">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>Artificial Intelligence</span>
+        <div class="row rv" style="--d:.4s">
+
+            <a
+                href="https://rashai.onrender.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn"
+            >
+                Visit live project ↗
+            </a>
+
+        </div>
+
+        <dl class="facts rv">
+
+            <div>
+                <dt class="mono">CATEGORY</dt>
+                <dd>AI & Education</dd>
+            </div>
+
+            <div>
+                <dt class="mono">STACK</dt>
+                <dd>HTML · CSS · JavaScript</dd>
+            </div>
+
+            <div>
+                <dt class="mono">FOCUS</dt>
+                <dd>Learning experience</dd>
+            </div>
+
+            <div>
+                <dt class="mono">TYPE</dt>
+                <dd>Web application</dd>
+            </div>
+
+        </dl>
+
+    </section>
+
+
+    <!-- PROJECT PREVIEW -->
+
+    <section class="wrap">
+
+        <div class="shot big rv">
+
+            <img
+                src="assets/projects/rashai.png"
+                alt="RashAI study companion interface"
+                loading="lazy"
+            >
+
         </div>
 
     </section>
 
 
-    <section class="project-preview" data-reveal>
+    <!-- PROJECT OVERVIEW -->
 
-        <img
-            src="assets/projects/rashai.png"
-            alt="RashAI study companion preview"
-            loading="lazy"
-        >
+    <section class="sec wrap">
+
+        <div class="head rv">
+
+            <h2>Behind the project</h2>
+
+            <span class="mono">01 — OVERVIEW</span>
+
+        </div>
+
+
+        <div class="about">
+
+            <p class="big rv">
+                Making AI feel like a helpful study partner.
+            </p>
+
+            <p class="rv">
+                RashAI is an AI-powered study companion
+                created to help students explore topics,
+                understand concepts and make their
+                learning experience more interactive.
+            </p>
+
+            <p class="rv" style="margin-top:1rem">
+                The interface focuses on a clean study
+                environment with features such as
+                mathematical formatting, voice interaction
+                and file support.
+            </p>
+
+        </div>
 
     </section>
 
 
-    <section class="section">
+    <!-- FEATURES -->
 
-        <div class="project-details">
+    <section class="sec wrap">
 
-            <div class="project-description">
+        <div class="head rv">
 
-                <span class="eyebrow">ABOUT THE PROJECT</span>
+            <h2>Designed for learning</h2>
 
-                <h2>Making learning more accessible.</h2>
+            <span class="mono">02 — EXPERIENCE</span>
 
-                <p>
-                    RashAI is a study companion concept built
-                    around the idea of making technology useful
-                    for students.
-                </p>
+        </div>
 
-                <p>
-                    The application focuses on an easy-to-use
-                    interface and AI-powered learning assistance.
-                    It is designed to provide students with a
-                    more convenient way to interact with their
-                    study material.
-                </p>
 
-                <p>
-                    Building RashAI helped me explore frontend
-                    development, responsive design, JavaScript
-                    interactions and integrating AI-powered
-                    functionality into a web application.
-                </p>
+        <div class="grid">
 
-                <div class="project-actions">
+            <article class="card rv">
 
-                    <a
-                        href="https://rashai.onrender.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn"
-                    >
-                        Visit live project ↗
-                    </a>
+                <div class="info">
+
+                    <span class="mono">01 / AI ASSISTANCE</span>
+
+                    <h3>Study companion</h3>
+
+                    <p>
+                        An interactive space where students
+                        can get assistance while exploring
+                        different learning topics.
+                    </p>
 
                 </div>
 
-            </div>
+            </article>
 
 
-            <aside class="project-info">
+            <article class="card rv" style="--d:.1s">
 
-                <h3>Project details</h3>
+                <div class="info">
 
-                <p>
-                    <strong>Category</strong><br>
-                    AI study companion
-                </p>
+                    <span class="mono">02 / MATHEMATICS</span>
 
-                <p>
-                    <strong>Frontend</strong><br>
-                    HTML · CSS · JavaScript
-                </p>
+                    <h3>Formula formatting</h3>
 
-                <p>
-                    <strong>Focus</strong><br>
-                    Learning experience and AI integration
-                </p>
+                    <p>
+                        Mathematical expressions are
+                        displayed using KaTeX for clearer
+                        reading and understanding.
+                    </p>
 
-                <p>
-                    <strong>Platform</strong><br>
-                    Web application
-                </p>
+                </div>
 
-            </aside>
+            </article>
+
+
+            <article class="card rv">
+
+                <div class="info">
+
+                    <span class="mono">03 / VOICE</span>
+
+                    <h3>Voice interaction</h3>
+
+                    <p>
+                        Voice input and language selection
+                        make the study experience more
+                        accessible and interactive.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="card rv" style="--d:.1s">
+
+                <div class="info">
+
+                    <span class="mono">04 / FILES</span>
+
+                    <h3>File support</h3>
+
+                    <p>
+                        File upload and download controls
+                        help make working with study
+                        materials more convenient.
+                    </p>
+
+                </div>
+
+            </article>
 
         </div>
 
     </section>
 
 
-    <section class="contact-section">
+    <!-- TECHNOLOGIES -->
 
-        <div class="contact-box">
+    <section class="sec wrap">
 
-            <span class="eyebrow">MORE PROJECTS</span>
+        <div class="head rv">
 
-            <h2>
-                There's more<br>
-                to <span class="accent">explore.</span>
-            </h2>
+            <h2>Built with</h2>
 
-            <p>
-                Take a look at the other things I've been building.
-            </p>
+            <span class="mono">03 — TECHNOLOGY</span>
 
-            <a href="work.html" class="btn">
-                Explore my work ↗
+        </div>
+
+        <ul class="tags rv">
+
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>Flask</li>
+            <li>KaTeX</li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- NEXT PROJECT -->
+
+    <section class="sec wrap">
+
+        <div class="head rv">
+
+            <h2>Keep exploring</h2>
+
+            <span class="mono">04 — NEXT PROJECT</span>
+
+        </div>
+
+        <a href="slidewala.html" class="next rv">
+
+            <div>
+
+                <span class="mono">NEXT PROJECT / 03</span>
+
+                <div class="nm">SlideWala ↗</div>
+
+            </div>
+
+            <span class="mono">AI & PRESENTATIONS</span>
+
+        </a>
+
+        <div class="row rv">
+
+            <a href="work.html" class="link">
+                View all projects ↗
             </a>
 
         </div>
 
     </section>
 
+
+    <!-- FOOTER -->
+
+    <footer class="foot wrap">
+
+        <div class="rv">
+
+            <span class="mono">LET'S BUILD SOMETHING</span>
+
+            <h2 style="margin-top:1rem">
+                Have an idea?
+            </h2>
+
+            <a
+                href="mailto:rajkahar9321@gmail.com"
+                class="mail"
+            >
+                rajkahar9321@gmail.com ↗
+            </a>
+
+        </div>
+
+
+        <div class="row">
+
+            <span class="mono">
+                © <span data-year>2026</span> RAJ KAHAR
+            </span>
+
+            <a
+                href="https://github.com/Rajkahar-12"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link"
+            >
+                GitHub ↗
+            </a>
+
+        </div>
+
+    </footer>
+
 </main>
-
-
-<footer>
-
-    <a class="brand" href="index.html">
-        raj<span>kahar</span>
-    </a>
-
-    <p>Designed &amp; built with curiosity.</p>
-
-    <p>
-        © <span data-year></span> Raj Kahar
-    </p>
-
-</footer>
 
 
 <script src="script.js" defer></script>
