@@ -4,167 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f7f5f2">
+    <meta name="theme-color" content="#0B0B0A">
 
-    <title>About — Raj Kahar</title>
-    <meta name="description" content="Learn about Raj Kahar, a BSc IT student and developer interested in Python, backend development and building useful digital products.">
+    <title>About Me — Raj Kahar</title>
+    <meta name="description" content="Get to know Raj Kahar, an IT student and developer exploring programming, backend development and AI.">
 
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="portfolio-redesign.css">
-
-    <style>
-        .about-hero {
-            padding: 175px 0 70px;
-        }
-
-        .about-hero h1 {
-            font-size: clamp(42px, 7vw, 70px);
-            letter-spacing: -3px;
-            line-height: 1.1;
-            margin: 18px 0;
-        }
-
-        .about-hero p {
-            max-width: 650px;
-            color: var(--muted);
-            font-size: 16px;
-        }
-
-        .profile-panel {
-            display: grid;
-            grid-template-columns: 1.3fr .7fr;
-            gap: 25px;
-            align-items: stretch;
-        }
-
-        .profile-main,
-        .profile-side {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-        }
-
-        .profile-main h2 {
-            font-size: 25px;
-            letter-spacing: -1px;
-            margin-top: 10px;
-        }
-
-        .profile-main p,
-        .profile-side p {
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .profile-side {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .profile-side .profile-stat {
-            font-size: 28px;
-            font-weight: 800;
-            letter-spacing: -1px;
-            color: var(--accent);
-        }
-
-        .profile-stat-label {
-            font-size: 12px;
-            color: var(--muted);
-        }
-
-        .profile-side hr {
-            width: 100%;
-            border: 0;
-            border-top: 1px solid var(--border);
-            margin: 20px 0;
-        }
-
-        .skill-groups {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 18px;
-        }
-
-        .skill-group {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 24px;
-        }
-
-        .skill-group h3 {
-            margin-top: 0;
-            font-size: 17px;
-        }
-
-        .skill-group p {
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-        .interest-list {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 12px;
-        }
-
-        .interest-item {
-            padding: 17px;
-            border-radius: 15px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            font-size: 13px;
-            font-weight: 600;
-            transition: transform .3s ease;
-        }
-
-        .interest-item:hover {
-            transform: translateY(-3px);
-        }
-
-        @media (max-width: 650px) {
-            .about-hero {
-                padding-top: 140px;
-            }
-
-            .about-hero h1 {
-                letter-spacing: -2px;
-            }
-
-            .profile-panel,
-            .skill-groups,
-            .interest-list {
-                grid-template-columns: 1fr;
-            }
-
-            .profile-main,
-            .profile-side {
-                padding: 23px;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
 <header class="nav">
 
-    <a class="brand" href="index.html">
-        raj<span>kahar</span>
+    <a href="index.html" class="brand">
+        raj<span style="color:var(--ac)">.</span>
     </a>
 
-    <nav aria-label="Primary navigation">
+    <nav aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="work.html">Work</a>
         <a href="about.html" aria-current="page">About</a>
@@ -176,225 +39,230 @@
 
 <main>
 
-    <!-- INTRODUCTION -->
+    <!-- INTRO -->
 
-    <section class="about-hero">
+    <section class="hero wrap">
 
-        <span class="eyebrow">A LITTLE ABOUT ME</span>
+        <span class="mono eyebrow rv">
+            A LITTLE ABOUT ME / 2026
+        </span>
 
-        <h1>
-            The person behind<br>
-            <span class="accent">the projects.</span>
+        <h1 class="rv" style="--d:.1s">
+            More than just
+            <em>the code.</em>
         </h1>
 
-        <p>
-            I'm Raj Kahar, a first-year BSc IT student
-            interested in programming, technology and
-            creating useful digital experiences.
+        <p class="lede rv" style="--d:.2s">
+            I'm Raj Kahar — an IT student, developer and
+            curious mind who enjoys turning ideas into
+            something real.
         </p>
 
     </section>
 
 
-    <!-- PROFILE -->
+    <!-- PERSONAL STORY -->
 
-    <section class="section">
+    <section class="sec wrap about">
 
-        <div class="section-heading">
+        <div class="head rv">
 
-            <span class="eyebrow">01 / PROFILE</span>
+            <h2>The story so far</h2>
 
-            <h2>Who I am.</h2>
+            <span class="mono">01 — MY JOURNEY</span>
 
         </div>
 
 
-        <div class="profile-panel">
+        <p class="big rv">
+            I started with curiosity.
+            Now I'm learning to build.
+        </p>
 
-            <div class="profile-main">
+        <p class="rv">
+            I'm currently pursuing my Bachelor of Science
+            in Information Technology. My interest lies in
+            understanding how software works and how
+            technology can solve everyday problems.
+        </p>
 
-                <span class="eyebrow">MY JOURNEY</span>
+        <p class="rv" style="margin-top:1rem">
+            Instead of only learning concepts, I enjoy
+            experimenting with them through real projects.
+            From web applications to AI-powered tools,
+            every project teaches me something new.
+        </p>
 
-                <h2>Learning. Experimenting. Building.</h2>
-
-                <p>
-                    My journey into development started with
-                    curiosity about how websites and applications
-                    actually work.
-                </p>
-
-                <p>
-                    I'm currently studying Information Technology
-                    and exploring Python, backend development,
-                    web technologies and AI integration.
-                </p>
-
-                <p>
-                    I enjoy taking an idea, experimenting with it,
-                    solving problems and gradually turning it into
-                    a working product.
-                </p>
-
-            </div>
+    </section>
 
 
-            <div class="profile-side">
+    <!-- APPROACH -->
 
-                <span class="eyebrow">CURRENT STATUS</span>
+    <section class="sec wrap">
 
-                <span class="profile-stat">FY BSc IT</span>
+        <div class="head rv">
 
-                <span class="profile-stat-label">
-                    Information Technology student
-                </span>
+            <h2>How I approach things</h2>
 
-                <hr>
+            <span class="mono">02 — MY MINDSET</span>
 
-                <span class="profile-stat">Developer</span>
+        </div>
 
-                <span class="profile-stat-label">
-                    Learning through real projects
-                </span>
 
-            </div>
+        <div class="grid">
+
+            <article class="card rv">
+
+                <div class="info">
+
+                    <span class="mono">01 / CURIOSITY</span>
+
+                    <h3>Explore</h3>
+
+                    <p>
+                        I like understanding how things work,
+                        exploring new technologies and
+                        asking questions.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="card rv" style="--d:.1s">
+
+                <div class="info">
+
+                    <span class="mono">02 / EXPERIMENT</span>
+
+                    <h3>Build</h3>
+
+                    <p>
+                        I learn by writing code, testing ideas,
+                        making mistakes and improving what
+                        I've created.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="card rv">
+
+                <div class="info">
+
+                    <span class="mono">03 / PROGRESS</span>
+
+                    <h3>Improve</h3>
+
+                    <p>
+                        Every project is an opportunity
+                        to improve my skills and understand
+                        something more deeply.
+                    </p>
+
+                </div>
+
+            </article>
 
         </div>
 
     </section>
 
 
-    <!-- SKILLS -->
+    <!-- TOOLKIT -->
 
-    <section class="section">
+    <section class="sec wrap">
 
-        <div class="section-heading">
+        <div class="head rv">
 
-            <span class="eyebrow">02 / TECHNOLOGIES</span>
+            <h2>Technologies I explore</h2>
 
-            <h2>My toolkit.</h2>
+            <span class="mono">03 — TOOLKIT</span>
 
-            <p>
-                Technologies I've been using while learning
-                and developing my projects.
+        </div>
+
+
+        <div class="about">
+
+            <p class="big rv">
+                Learning the fundamentals.
+                Building towards bigger things.
             </p>
 
         </div>
 
 
-        <div class="skill-groups">
+        <ul class="tags rv">
 
-            <article class="skill-group">
+            <li>Python</li>
+            <li>C</li>
+            <li>JavaScript</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Flask</li>
+            <li>SQLite</li>
+            <li>SQL</li>
+            <li>Git</li>
+            <li>GitHub</li>
+            <li>VS Code</li>
+            <li>AI APIs</li>
 
-                <h3>Programming</h3>
-
-                <ul class="tool-list">
-                    <li>Python</li>
-                    <li>C</li>
-                    <li>JavaScript</li>
-                </ul>
-
-                <p>
-                    Learning programming fundamentals,
-                    problem-solving and application logic.
-                </p>
-
-            </article>
-
-
-            <article class="skill-group">
-
-                <h3>Web development</h3>
-
-                <ul class="tool-list">
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>Flask</li>
-                </ul>
-
-                <p>
-                    Building responsive interfaces and
-                    web applications.
-                </p>
-
-            </article>
-
-
-            <article class="skill-group">
-
-                <h3>Database</h3>
-
-                <ul class="tool-list">
-                    <li>SQLite</li>
-                    <li>SQL basics</li>
-                </ul>
-
-                <p>
-                    Understanding data storage and
-                    database management.
-                </p>
-
-            </article>
-
-
-            <article class="skill-group">
-
-                <h3>Developer tools</h3>
-
-                <ul class="tool-list">
-                    <li>VS Code</li>
-                    <li>Git</li>
-                    <li>GitHub</li>
-                </ul>
-
-                <p>
-                    Writing code, managing projects
-                    and publishing applications.
-                </p>
-
-            </article>
-
-        </div>
+        </ul>
 
     </section>
 
 
-    <!-- INTERESTS -->
+    <!-- CURRENT INTERESTS -->
 
-    <section class="section">
+    <section class="sec wrap">
 
-        <div class="section-heading">
+        <div class="head rv">
 
-            <span class="eyebrow">03 / WHAT INTERESTS ME</span>
+            <h2>What's on my mind</h2>
 
-            <h2>Things I'm exploring.</h2>
+            <span class="mono">04 — CURRENT INTERESTS</span>
 
         </div>
 
 
-        <div class="interest-list">
+        <div class="grid">
 
-            <div class="interest-item">
-                Python backend development
+            <div class="card rv">
+                <div class="info">
+                    <span class="mono">01</span>
+                    <h3>Backend development</h3>
+                    <p>
+                        Building application logic,
+                        APIs and server-side systems.
+                    </p>
+                </div>
             </div>
 
-            <div class="interest-item">
-                APIs and integrations
+
+            <div class="card rv" style="--d:.1s">
+                <div class="info">
+                    <span class="mono">02</span>
+                    <h3>Artificial intelligence</h3>
+                    <p>
+                        Exploring AI tools and integrating
+                        intelligent features into applications.
+                    </p>
+                </div>
             </div>
 
-            <div class="interest-item">
-                Artificial intelligence
-            </div>
 
-            <div class="interest-item">
-                Full-stack applications
-            </div>
-
-            <div class="interest-item">
-                Real-world problem solving
-            </div>
-
-            <div class="interest-item">
-                Building useful products
+            <div class="card rv">
+                <div class="info">
+                    <span class="mono">03</span>
+                    <h3>Full-stack development</h3>
+                    <p>
+                        Understanding how frontend,
+                        backend and databases work together.
+                    </p>
+                </div>
             </div>
 
         </div>
@@ -404,55 +272,93 @@
 
     <!-- CLOSING -->
 
-    <section class="contact-section">
+    <section class="sec wrap about">
 
-        <div class="contact-box">
+        <div class="head rv">
 
-            <span class="eyebrow">04 / WHAT'S NEXT</span>
+            <h2>Looking ahead</h2>
 
-            <h2>
-                Always learning.<br>
-                Always <span class="accent">building.</span>
+            <span class="mono">05 — THE JOURNEY CONTINUES</span>
+
+        </div>
+
+
+        <p class="big rv">
+            I haven't figured everything out yet.
+            That's the exciting part.
+        </p>
+
+        <p class="rv">
+            I'm here to keep learning, building better
+            products and discovering what I can create
+            with technology.
+        </p>
+
+        <div class="row rv">
+
+            <a href="work.html" class="btn">
+                Explore my work ↗
+            </a>
+
+            <a href="index.html#contact" class="link">
+                Get in touch
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="foot wrap">
+
+        <div class="rv">
+
+            <span class="mono">HAVE SOMETHING IN MIND?</span>
+
+            <h2 style="margin-top:1rem">
+                Let's connect.
             </h2>
 
-            <p>
-                I'm looking forward to creating better projects,
-                learning new technologies and connecting
-                with people who enjoy building things.
-            </p>
+            <a
+                href="mailto:rajkahar9321@gmail.com"
+                class="mail"
+            >
+                rajkahar9321@gmail.com ↗
+            </a>
 
-            <div class="hero-actions">
+        </div>
 
-                <a href="work.html" class="btn">
-                    See my projects ↗
+
+        <div class="row">
+
+            <span class="mono">
+                © <span data-year>2026</span> RAJ KAHAR
+            </span>
+
+            <div class="row" style="margin:0;gap:1.5rem">
+
+                <a
+                    href="https://github.com/Rajkahar-12"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="link"
+                >
+                    GitHub ↗
                 </a>
 
-                <a href="index.html#contact" class="btn secondary">
-                    Get in touch
+                <a href="index.html" class="link">
+                    Home
                 </a>
 
             </div>
 
         </div>
 
-    </section>
+    </footer>
 
 </main>
-
-
-<footer>
-
-    <a class="brand" href="index.html">
-        raj<span>kahar</span>
-    </a>
-
-    <p>Designed &amp; built with curiosity.</p>
-
-    <p>
-        © <span data-year></span> Raj Kahar
-    </p>
-
-</footer>
 
 
 <script src="script.js" defer></script>
