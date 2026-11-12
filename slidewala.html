@@ -20,19 +20,19 @@
       <a href="about.html">About</a>
       <a href="index.html#contact">Contact</a>
     </nav>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
     <button class="theme-toggle" type="button" aria-label="Switch theme">☀</button>
   </header>
 
   <main>
-
-    <section class="section rv">
+    <section class="section rv" style="padding-top: clamp(5rem, 10vw, 7rem);">
       <p class="eyebrow">CASE STUDY — AI & PRODUCTIVITY</p>
       <h1>SlideWala</h1>
-      <p class="text-muted">
+      <p class="text-muted" style="font-size: 1.02rem; max-width: 56ch;">
         An AI-powered tool that transforms a topic into a complete PowerPoint
         presentation — built for speed without sacrificing clarity.
       </p>
-      <p>
+      <p style="margin-top: 1.5rem;">
         <a href="https://slidewala.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn--glass">
           Visit live project ↗
         </a>
@@ -40,7 +40,7 @@
     </section>
 
     <section class="section rv">
-      <figure class="project-media" style="aspect-ratio: 16 / 10;">
+      <figure class="project-media" style="aspect-ratio: 16 / 10; margin: 0;">
         <img src="assets/projects/slidewala.png" alt="SlideWala presentation generator screenshot" loading="eager">
       </figure>
     </section>
@@ -50,22 +50,24 @@
         <p class="eyebrow">01 — OVERVIEW</p>
         <h2>What it does</h2>
       </div>
-      <div class="project-grid">
+      <div class="detail-meta">
         <div class="project-meta">
           <p class="project-label">CATEGORY</p>
-          <p>AI · Productivity</p>
-          <p class="project-label" style="margin-top: 1rem;">STACK</p>
-          <p>Python · Flask · AI APIs</p>
-          <p class="project-label" style="margin-top: 1rem;">ROLE</p>
-          <p>Design & development</p>
-          <p class="project-label" style="margin-top: 1rem;">LIVE</p>
-          <p><a href="https://slidewala.onrender.com" target="_blank" rel="noopener noreferrer" class="text-muted">slidewala.onrender.com ↗</a></p>
+          <p class="project-tags">AI · Productivity</p>
+          <p class="project-label" style="margin-top: 1.25rem;">STACK</p>
+          <p class="project-tags">Python · Flask · AI APIs</p>
+          <p class="project-label" style="margin-top: 1.25rem;">ROLE</p>
+          <p class="project-tags">Design & development</p>
+          <p class="project-label" style="margin-top: 1.25rem;">LIVE</p>
+          <p class="project-tags">
+            <a href="https://slidewala.onrender.com" target="_blank" rel="noopener noreferrer">slidewala.onrender.com ↗</a>
+          </p>
         </div>
         <div>
           <p class="text-muted">
             SlideWala takes a topic and generates a structured presentation
-            from it — outline, slides, and content — so that making a deck
-            becomes a matter of editing rather than starting from a blank page.
+            from it — outline, slides, and content — so making a deck becomes
+            a matter of editing rather than starting from a blank page.
           </p>
           <p class="text-muted">
             Built with Python and Flask, integrating AI APIs for generation,
@@ -78,18 +80,17 @@
     <section class="section rv">
       <p><a href="index.html#work" class="text-muted">← Back to all projects</a></p>
     </section>
-
   </main>
 
-  <footer class="section">
-    <p class="text-muted">© 2026 RAJ KAHAR</p>
-    <p>
-      <a href="https://github.com/Rajkahar-12" class="text-muted" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-      &nbsp;·&nbsp;
-      <a href="about.html" class="text-muted">About</a>
-      &nbsp;·&nbsp;
-      <a href="index.html#work" class="text-muted">Work</a>
-    </p>
+  <footer class="footer">
+    <div class="section" style="padding-block: 0; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; align-items: center;">
+      <p class="text-muted" style="margin: 0; font-size: 0.8rem; letter-spacing: 0.08em;">© 2026 RAJ KAHAR</p>
+      <p style="margin: 0; display: flex; gap: 1.25rem;">
+        <a href="https://github.com/Rajkahar-12" class="text-muted" style="font-size: 0.82rem;" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="about.html" class="text-muted" style="font-size: 0.82rem;">About</a>
+        <a href="index.html#work" class="text-muted" style="font-size: 0.82rem;">Work</a>
+      </p>
+    </div>
   </footer>
 
   <script src="script.js" defer></script>
