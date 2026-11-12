@@ -4,14 +4,15 @@ document.documentElement.classList.add("js");
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.documentElement;
     const header = document.querySelector(".nav");
-    const themeKey = "raj-portfolio-theme";
     const reduceMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)"
     ).matches;
 
     // =====================================
-    // THEME
+    // THEME SYSTEM
     // =====================================
+
+    const themeKey = "raj-portfolio-theme";
 
     let savedTheme = "light";
 
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (error) {}
 
     const themeButton = document.createElement("button");
+
     themeButton.className = "theme-toggle";
     themeButton.type = "button";
 
@@ -27,7 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const selected = theme === "dark" ? "dark" : "light";
 
         root.setAttribute("data-theme", selected);
-        themeButton.textContent = selected === "dark" ? "☀" : "☾";
+
+        themeButton.textContent =
+            selected === "dark" ? "☀" : "☾";
 
         themeButton.setAttribute(
             "aria-label",
@@ -47,10 +51,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     themeButton.addEventListener("click", () => {
         const current = root.getAttribute("data-theme");
+
         applyTheme(current === "dark" ? "light" : "dark");
     });
 
-    if (header) header.appendChild(themeButton);
+    if (header) {
+        header.appendChild(themeButton);
+    }
 
     // =====================================
     // MOBILE NAVIGATION
@@ -65,6 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
             menuButton.className = "menu-toggle";
             menuButton.type = "button";
             menuButton.textContent = "☰";
+
             menuButton.setAttribute("aria-label", "Open menu");
             menuButton.setAttribute("aria-expanded", "false");
 
@@ -72,19 +80,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
             function closeMenu() {
                 nav.classList.remove("open");
+
                 menuButton.textContent = "☰";
                 menuButton.setAttribute("aria-expanded", "false");
                 menuButton.setAttribute("aria-label", "Open menu");
             }
 
             menuButton.addEventListener("click", () => {
-                const open = nav.classList.toggle("open");
+                const isOpen = nav.classList.toggle("open");
 
-                menuButton.textContent = open ? "✕" : "☰";
-                menuButton.setAttribute("aria-expanded", String(open));
+                menuButton.textContent = isOpen ? "✕" : "☰";
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    String(isOpen)
+                );
+
                 menuButton.setAttribute(
                     "aria-label",
-                    open ? "Close menu" : "Open menu"
+                    isOpen ? "Close menu" : "Open menu"
                 );
             });
 
@@ -93,26 +107,35 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             document.addEventListener("click", event => {
-                if (!header.contains(event.target)) closeMenu();
+                if (!header.contains(event.target)) {
+                    closeMenu();
+                }
             });
 
             document.addEventListener("keydown", event => {
-                if (event.key === "Escape") closeMenu();
+                if (event.key === "Escape") {
+                    closeMenu();
+                }
             });
 
             window.addEventListener("resize", () => {
-                if (window.innerWidth > 760) closeMenu();
+                if (window.innerWidth > 760) {
+                    closeMenu();
+                }
             }, { passive: true });
 
-            // Active page
+            // Active navigation link
+
             const currentPage =
                 window.location.pathname.split("/").pop() || "index.html";
 
             nav.querySelectorAll("a").forEach(link => {
                 const url = new URL(link.href, window.location.href);
-                const page = url.pathname.split("/").pop() || "index.html";
 
-                if (page === currentPage && !url.hash) {
+                const linkPage =
+                    url.pathname.split("/").pop() || "index.html";
+
+                if (linkPage === currentPage && !url.hash) {
                     link.classList.add("active");
                 }
             });
@@ -127,6 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ".section-heading",
         ".about-content",
         ".projects-grid > *",
+        ".dashboard-grid > *",
         ".about-grid > *",
         ".tool-list li",
         ".exploring",
@@ -139,22 +163,28 @@ document.addEventListener("DOMContentLoaded", () => {
         revealSelectors.join(",")
     );
 
-    if (reduceMotion || !("IntersectionObserver" in window)) {
+    if (
+        reduceMotion ||
+        !("IntersectionObserver" in window)
+    ) {
         revealElements.forEach(element => {
             element.classList.add("is-visible");
         });
     } else {
-        const observer = new IntersectionObserver((entries, currentObserver) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("is-visible");
-                    currentObserver.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.12,
-            rootMargin: "0px 0px -35px 0px"
-        });
+        const observer = new IntersectionObserver(
+            (entries, currentObserver) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        currentObserver.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.12,
+                rootMargin: "0px 0px -35px 0px"
+            }
+        );
 
         revealElements.forEach(element => {
             element.setAttribute("data-reveal", "");
@@ -173,6 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!targetId || targetId === "#") return;
 
             const target = document.querySelector(targetId);
+
             if (!target) return;
 
             event.preventDefault();
