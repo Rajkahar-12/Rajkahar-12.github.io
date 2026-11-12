@@ -20,17 +20,17 @@
       <a href="about.html" class="active">About</a>
       <a href="index.html#contact">Contact</a>
     </nav>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
     <button class="theme-toggle" type="button" aria-label="Switch theme">☀</button>
   </header>
 
   <main>
-
-    <section class="section rv">
+    <section class="section rv" style="padding-top: clamp(5rem, 10vw, 7rem);">
       <p class="eyebrow">ABOUT / 2026</p>
-      <h1>Raj Kahar</h1>
-      <p class="text-muted">
-        Developer and BSc Information Technology student building useful things
-        with Python, the web, and AI.
+      <h1>Raj Kahar — <em>developer & builder</em>.</h1>
+      <p class="text-muted" style="font-size: 1.02rem; max-width: 56ch;">
+        BSc Information Technology student building useful things with Python,
+        the web, and AI.
       </p>
     </section>
 
@@ -57,38 +57,26 @@
         <p class="eyebrow">02 — WHAT I DO</p>
         <h2>Focus areas</h2>
       </div>
-      <div class="project-grid">
-        <div>
+      <div class="feature-grid">
+        <div class="feature">
           <p class="project-label">BACKEND</p>
           <h3 class="project-title">Python & Flask</h3>
-          <p class="project-desc">
-            Building server-side logic, APIs, and applications with Python and
-            Flask — from small utilities to full products.
-          </p>
+          <p class="text-muted">Building server-side logic, APIs, and applications — from small utilities to full products.</p>
         </div>
-        <div>
+        <div class="feature">
           <p class="project-label">INTERFACES</p>
           <h3 class="project-title">HTML · CSS · JavaScript</h3>
-          <p class="project-desc">
-            Crafting clean, responsive interfaces with attention to typography,
-            spacing, and the small details that make a page feel considered.
-          </p>
+          <p class="text-muted">Crafting clean, responsive interfaces with attention to typography, spacing, and detail.</p>
         </div>
-        <div>
+        <div class="feature">
           <p class="project-label">APPLIED AI</p>
           <h3 class="project-title">AI-powered tools</h3>
-          <p class="project-desc">
-            Integrating language models and AI APIs to build practical tools —
-            like a study companion and a presentation generator.
-          </p>
+          <p class="text-muted">Integrating language models and AI APIs to build practical tools — a study companion, a deck generator.</p>
         </div>
-        <div>
+        <div class="feature">
           <p class="project-label">TOOLING</p>
           <h3 class="project-title">Git & GitHub</h3>
-          <p class="project-desc">
-            Version control, clean commit history, and deploying real projects
-            to production environments.
-          </p>
+          <p class="text-muted">Version control, clean commit history, and deploying real projects to production.</p>
         </div>
       </div>
     </section>
@@ -110,21 +98,24 @@
         <p class="eyebrow">04 — GET IN TOUCH</p>
         <h2>Let's connect</h2>
       </div>
-      <p><a href="mailto:rajkahar9321@gmail.com" class="text-muted">rajkahar9321@gmail.com ↗</a></p>
-      <p><a href="https://github.com/Rajkahar-12" class="text-muted" target="_blank" rel="noopener noreferrer">github.com/Rajkahar-12 ↗</a></p>
+      <p>
+        <a href="mailto:rajkahar9321@gmail.com" class="btn btn--glass">rajkahar9321@gmail.com ↗</a>
+      </p>
+      <p style="margin-top: 1rem;">
+        <a href="https://github.com/Rajkahar-12" class="text-muted" target="_blank" rel="noopener noreferrer">github.com/Rajkahar-12 ↗</a>
+      </p>
     </section>
-
   </main>
 
-  <footer class="section">
-    <p class="text-muted">© 2026 RAJ KAHAR</p>
-    <p>
-      <a href="https://github.com/Rajkahar-12" class="text-muted" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-      &nbsp;·&nbsp;
-      <a href="about.html" class="text-muted">About</a>
-      &nbsp;·&nbsp;
-      <a href="index.html#work" class="text-muted">Work</a>
-    </p>
+  <footer class="footer">
+    <div class="section" style="padding-block: 0; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; align-items: center;">
+      <p class="text-muted" style="margin: 0; font-size: 0.8rem; letter-spacing: 0.08em;">© 2026 RAJ KAHAR</p>
+      <p style="margin: 0; display: flex; gap: 1.25rem;">
+        <a href="https://github.com/Rajkahar-12" class="text-muted" style="font-size: 0.82rem;" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="about.html" class="text-muted" style="font-size: 0.82rem;">About</a>
+        <a href="index.html#work" class="text-muted" style="font-size: 0.82rem;">Work</a>
+      </p>
+    </div>
   </footer>
 
   <script src="script.js" defer></script>
