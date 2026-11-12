@@ -4,116 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f7f5f2">
+    <meta name="theme-color" content="#0B0B0A">
 
-    <title>Work — Raj Kahar</title>
-    <meta name="description" content="Explore projects built by Raj Kahar using Python, Flask, AI and modern web technologies.">
+    <title>Selected Work — Raj Kahar</title>
+    <meta name="description" content="Explore digital products and experiments built by Raj Kahar.">
 
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="portfolio-redesign.css">
-
-    <style>
-        .work-intro {
-            padding: 175px 0 65px;
-        }
-
-        .work-intro h1 {
-            font-size: clamp(42px, 7vw, 72px);
-            line-height: 1.08;
-            letter-spacing: -3px;
-            margin: 18px 0;
-        }
-
-        .work-intro p {
-            max-width: 600px;
-            color: var(--muted);
-            font-size: 16px;
-        }
-
-        .work-count {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-            padding: 9px 13px;
-            margin-top: 18px;
-            border-radius: 12px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            color: var(--muted);
-            font-size: 12px;
-            font-weight: 700;
-        }
-
-        .work-count strong {
-            color: var(--accent);
-        }
-
-        .work-projects {
-            padding: 20px 0 100px;
-        }
-
-        .work-projects .project-card {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .work-projects .project-card img {
-            aspect-ratio: 16 / 9;
-            object-fit: cover;
-        }
-
-        .work-projects .project-card-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .work-projects .project-card-content .btn {
-            margin-top: auto;
-        }
-
-        .work-note {
-            margin-top: 35px;
-            padding: 24px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-        }
-
-        .work-note p {
-            color: var(--muted);
-            margin-bottom: 0;
-        }
-
-        @media (max-width: 600px) {
-            .work-intro {
-                padding-top: 140px;
-            }
-
-            .work-intro h1 {
-                letter-spacing: -2px;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
 <header class="nav">
 
-    <a class="brand" href="index.html">
-        raj<span>kahar</span>
+    <a href="index.html" class="brand">
+        raj<span style="color:var(--ac)">.</span>
     </a>
 
-    <nav aria-label="Primary navigation">
+    <nav aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="work.html" aria-current="page">Work</a>
         <a href="about.html">About</a>
@@ -125,204 +39,249 @@
 
 <main>
 
-    <!-- INTRO -->
+    <!-- PAGE INTRO -->
 
-    <section class="work-intro">
+    <section class="hero wrap">
 
-        <span class="eyebrow">MY PROJECTS / PORTFOLIO</span>
+        <span class="mono eyebrow rv">
+            PORTFOLIO / 01 — SELECTED WORK
+        </span>
 
-        <h1>
-            Ideas into<br>
-            <span class="accent">reality.</span>
+        <h1 class="rv" style="--d:.1s">
+            Things I've
+            <em>built.</em>
         </h1>
 
-        <p>
-            A collection of digital products and experiments
-            I've worked on while learning, exploring technology,
-            and turning ideas into something useful.
+        <p class="lede rv" style="--d:.2s">
+            A collection of ideas turned into digital products.
+            Each project is a part of my journey as a developer —
+            learning, experimenting and building along the way.
         </p>
 
-        <div class="work-count">
-            <strong>03</strong>
-            Featured projects
+        <div class="row rv" style="--d:.3s">
+
+            <span class="mono" style="color:var(--mu)">
+                03 FEATURED PROJECTS
+            </span>
+
+            <span class="mono" style="color:var(--mu)">
+                INDIA · 2026
+            </span>
+
         </div>
 
     </section>
 
 
-    <!-- PROJECTS -->
+    <!-- PROJECT COLLECTION -->
 
-    <section class="work-projects">
+    <section class="sec wrap">
 
-        <div class="section-heading">
+        <div class="head rv">
 
-            <span class="eyebrow">01 / PROJECT COLLECTION</span>
+            <h2>Project archive</h2>
 
-            <h2>Selected work.</h2>
-
-            <p>
-                Each project represents a different idea,
-                challenge and learning experience.
-            </p>
+            <span class="mono">01 — 03</span>
 
         </div>
 
 
-        <div class="projects-grid">
+        <div class="grid">
+
 
             <!-- STICKYMIND -->
 
-            <article class="project-card">
+            <a href="stickymind.html" class="card rv">
 
-                <img
-                    src="assets/projects/stickymind.png"
-                    alt="StickyMind application preview"
-                    loading="lazy"
-                    decoding="async"
-                >
+                <div class="shot">
 
-                <div class="project-card-content">
+                    <img
+                        src="assets/projects/stickymind.png"
+                        alt="StickyMind application preview"
+                        loading="lazy"
+                    >
 
-                    <span class="eyebrow">
-                        PRODUCTIVITY · WEB APPLICATION
-                    </span>
+                </div>
+
+                <div class="info">
+
+                    <span class="mono">01 / PRODUCTIVITY</span>
 
                     <h3>StickyMind</h3>
 
                     <p>
                         A productivity application designed to
-                        organize notes, manage thoughts and
-                        keep important reminders in one place.
+                        organize notes, manage thoughts and keep
+                        important reminders in one place.
                     </p>
 
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>Flask</span>
-                        <span>SQLite</span>
-                    </div>
-
-                    <a href="stickymind.html" class="btn">
-                        Explore project ↗
-                    </a>
+                    <span class="mono">
+                        PYTHON · FLASK · SQLITE ↗
+                    </span>
 
                 </div>
 
-            </article>
+            </a>
 
 
             <!-- RASHAI -->
 
-            <article class="project-card">
+            <a href="rashai.html" class="card rv" style="--d:.12s">
 
-                <img
-                    src="assets/projects/rashai.png"
-                    alt="RashAI application preview"
-                    loading="lazy"
-                    decoding="async"
-                >
+                <div class="shot">
 
-                <div class="project-card-content">
+                    <img
+                        src="assets/projects/rashai.png"
+                        alt="RashAI application preview"
+                        loading="lazy"
+                    >
 
-                    <span class="eyebrow">
-                        ARTIFICIAL INTELLIGENCE · EDUCATION
-                    </span>
+                </div>
+
+                <div class="info">
+
+                    <span class="mono">02 / ARTIFICIAL INTELLIGENCE</span>
 
                     <h3>RashAI</h3>
 
                     <p>
                         An AI-powered study companion designed
-                        to help students explore topics and
-                        make learning easier.
+                        to make exploring topics and learning
+                        more accessible.
                     </p>
 
-                    <div class="project-tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-
-                    <a href="rashai.html" class="btn">
-                        Explore project ↗
-                    </a>
+                    <span class="mono">
+                        HTML · CSS · JAVASCRIPT ↗
+                    </span>
 
                 </div>
 
-            </article>
+            </a>
 
 
             <!-- SLIDEWALA -->
 
-            <article class="project-card">
+            <a href="slidewala.html" class="card rv" style="--d:.24s">
 
-                <img
-                    src="assets/projects/slidewala.png"
-                    alt="SlideWala application preview"
-                    loading="lazy"
-                    decoding="async"
-                >
+                <div class="shot">
 
-                <div class="project-card-content">
+                    <img
+                        src="assets/projects/slidewala.png"
+                        alt="SlideWala application preview"
+                        loading="lazy"
+                    >
 
-                    <span class="eyebrow">
-                        AI · PRESENTATION GENERATOR
-                    </span>
+                </div>
+
+                <div class="info">
+
+                    <span class="mono">03 / AI &amp; PRODUCTIVITY</span>
 
                     <h3>SlideWala</h3>
 
                     <p>
-                        An AI presentation generator that transforms
-                        topics and ideas into structured presentations.
+                        An AI presentation generator that turns
+                        topics and ideas into structured
+                        PowerPoint presentations.
                     </p>
 
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>Flask</span>
-                        <span>AI APIs</span>
-                    </div>
-
-                    <a href="slidewala.html" class="btn">
-                        Explore project ↗
-                    </a>
+                    <span class="mono">
+                        PYTHON · FLASK · AI APIS ↗
+                    </span>
 
                 </div>
 
-            </article>
+            </a>
 
-        </div>
-
-
-        <div class="work-note">
-
-            <span class="eyebrow">MORE COMING SOON</span>
-
-            <h3>Still building. Still learning.</h3>
-
-            <p>
-                I'm continuously experimenting with new ideas
-                and technologies. More projects will find
-                their way here.
-            </p>
 
         </div>
 
     </section>
 
+
+    <!-- CLOSING SECTION -->
+
+    <section class="sec wrap about">
+
+        <div class="head rv">
+
+            <h2>What's next?</h2>
+
+            <span class="mono">02 — CONTINUOUSLY BUILDING</span>
+
+        </div>
+
+        <p class="big rv">
+            The best ideas are still waiting to be built.
+        </p>
+
+        <p class="rv" style="color:var(--mu);max-width:600px">
+            I'm always exploring new technologies, learning
+            new skills and experimenting with ideas.
+            This collection will keep growing.
+        </p>
+
+        <div class="row rv">
+
+            <a href="about.html" class="link">
+                Get to know me ↗
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="foot wrap">
+
+        <div class="rv">
+
+            <span class="mono">HAVE AN IDEA?</span>
+
+            <h2 style="margin-top:1rem">
+                Let's talk.
+            </h2>
+
+            <a
+                href="mailto:rajkahar9321@gmail.com"
+                class="mail"
+            >
+                rajkahar9321@gmail.com ↗
+            </a>
+
+        </div>
+
+
+        <div class="row">
+
+            <span class="mono">
+                © <span data-year>2026</span> RAJ KAHAR
+            </span>
+
+            <div class="row" style="margin:0;gap:1.5rem">
+
+                <a
+                    href="https://github.com/Rajkahar-12"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="link"
+                >
+                    GitHub ↗
+                </a>
+
+                <a href="index.html" class="link">
+                    Home
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
 </main>
-
-
-<footer>
-
-    <a class="brand" href="index.html">
-        raj<span>kahar</span>
-    </a>
-
-    <p>Designed &amp; built with curiosity.</p>
-
-    <p>
-        © <span data-year></span> Raj Kahar
-    </p>
-
-</footer>
 
 
 <script src="script.js" defer></script>
