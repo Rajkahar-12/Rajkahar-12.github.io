@@ -4,512 +4,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f7f5f2">
+    <meta name="theme-color" content="#0B0B0A">
 
     <title>Raj Kahar — Developer & Builder</title>
-    <meta name="description" content="Raj Kahar is a developer and BSc IT student building practical digital products with Python, Flask and modern web technologies.">
+    <meta name="description" content="Raj Kahar is a developer building useful digital products with Python, Flask and modern web technologies.">
 
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="portfolio-redesign.css">
-
-    <style>
-        .dashboard-welcome {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 25px;
-            margin-bottom: 35px;
-        }
-
-        .dashboard-welcome h2 {
-            font-size: clamp(25px, 4vw, 36px);
-            letter-spacing: -1.5px;
-            margin: 8px 0;
-        }
-
-        .dashboard-welcome p {
-            color: var(--muted);
-            margin: 0;
-        }
-
-        .status-indicator {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-            padding: 10px 15px;
-            border-radius: 30px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            font-size: 12px;
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #35ad72;
-            box-shadow: 0 0 0 4px rgba(53,173,114,.12);
-        }
-
-        .dashboard-card .widget-label {
-            display: block;
-            color: var(--muted);
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 1.2px;
-            margin-bottom: 14px;
-        }
-
-        .dashboard-card .widget-value {
-            display: block;
-            font-size: 25px;
-            font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 5px;
-        }
-
-        .dashboard-card .widget-detail {
-            color: var(--muted);
-            font-size: 12px;
-        }
-
-        .dashboard-card .widget-icon {
-            display: grid;
-            place-items: center;
-            width: 38px;
-            height: 38px;
-            border-radius: 12px;
-            background: var(--accent-soft);
-            color: var(--accent);
-            margin-bottom: 18px;
-            font-size: 17px;
-        }
-
-        .dashboard-quicklinks {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 25px;
-        }
-
-        .hero-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 28px;
-        }
-
-        .hero-meta span {
-            padding: 7px 11px;
-            border: 1px solid var(--border);
-            border-radius: 9px;
-            color: var(--muted);
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: .8px;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 15px 0 20px;
-        }
-
-        .project-tags span {
-            padding: 6px 10px;
-            border-radius: 8px;
-            background: var(--surface-soft);
-            color: var(--muted);
-            font-size: 11px;
-            font-weight: 600;
-        }
-
-        .contact-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 25px;
-        }
-
-        .contact-links a {
-            padding: 12px 18px;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            background: var(--surface);
-            font-size: 13px;
-            font-weight: 700;
-            transition: .3s ease;
-        }
-
-        .contact-links a:hover {
-            background: var(--accent-soft);
-            border-color: var(--accent);
-            transform: translateY(-3px);
-        }
-
-        .dashboard-divider {
-            height: 1px;
-            background: var(--border);
-            margin: 25px 0;
-        }
-
-        @media (max-width: 600px) {
-            .dashboard-welcome {
-                align-items: flex-start;
-                flex-direction: column;
-            }
-
-            .dashboard-quicklinks {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .dashboard-quicklinks .btn {
-                width: 100%;
-            }
-        }
-    </style>
 </head>
 
-<body class="home-page">
+<body>
 
-<header class="nav">
-    <a class="brand" href="index.html" aria-label="Raj Kahar home">
-        raj<span>kahar</span>
+<header class="nav wrap">
+
+    <a href="index.html" class="brand">
+        raj<span style="color:var(--ac)">.</span>
     </a>
 
-    <nav aria-label="Primary navigation">
+    <nav aria-label="Main navigation">
         <a href="index.html" aria-current="page">Home</a>
         <a href="work.html">Work</a>
         <a href="about.html">About</a>
         <a href="#contact">Contact</a>
     </nav>
+
 </header>
+
 
 <main>
 
-    <!-- WELCOME -->
+    <!-- HERO -->
 
-    <section class="hero">
+    <section class="hero wrap">
 
-        <div class="hero-content">
-
-            <span class="eyebrow">
-                PERSONAL DEVELOPER DASHBOARD
-            </span>
-
-            <h1>
-                Building ideas.<br>
-                Creating <span>useful things.</span>
-            </h1>
-
-            <p>
-                Hey, I'm Raj — a developer and BSc IT student
-                exploring technology, building digital products,
-                and learning something new with every project.
-            </p>
-
-            <div class="hero-actions">
-
-                <a href="work.html" class="btn">
-                    Explore my work ↗
-                </a>
-
-                <a href="#contact" class="btn secondary">
-                    Let's connect
-                </a>
-
-            </div>
-
-            <div class="hero-meta">
-                <span>PYTHON</span>
-                <span>FLASK</span>
-                <span>WEB DEVELOPMENT</span>
-                <span>AI EXPERIMENTS</span>
-            </div>
-
+        <div class="mono eyebrow rv">
+            <span>PORTFOLIO / 2026</span>
+            &nbsp; — &nbsp;
+            DEVELOPER &amp; BUILDER
         </div>
 
-    </section>
+        <h1 class="rv" style="--d:.1s">
+            Turning ideas into
+            <em>digital experiences.</em>
+        </h1>
 
+        <p class="lede rv" style="--d:.2s">
+            Hey, I'm Raj. A developer and BSc IT student
+            exploring technology, building useful products
+            and learning through experimentation.
+        </p>
 
-    <!-- DASHBOARD -->
-
-    <section class="section" id="dashboard">
-
-        <div class="dashboard-welcome">
-
-            <div>
-                <span class="eyebrow">01 / OVERVIEW</span>
-                <h2>My workspace.</h2>
-                <p>A quick look at what I'm learning and building.</p>
-            </div>
-
-            <div class="status-indicator">
-                <span class="status-dot"></span>
-                Learning & building
-            </div>
-
-        </div>
-
-
-        <div class="dashboard-grid">
-
-            <article class="dashboard-card">
-
-                <div class="widget-icon">⌘</div>
-
-                <span class="widget-label">PROJECTS</span>
-
-                <span class="widget-value">03</span>
-
-                <span class="widget-detail">
-                    Featured projects
-                </span>
-
-            </article>
-
-
-            <article class="dashboard-card">
-
-                <div class="widget-icon">⌨</div>
-
-                <span class="widget-label">MAIN FOCUS</span>
-
-                <span class="widget-value">Python</span>
-
-                <span class="widget-detail">
-                    Backend development
-                </span>
-
-            </article>
-
-
-            <article class="dashboard-card">
-
-                <div class="widget-icon">✦</div>
-
-                <span class="widget-label">CURRENT GOAL</span>
-
-                <span class="widget-value">Build</span>
-
-                <span class="widget-detail">
-                    Better real-world applications
-                </span>
-
-            </article>
-
-        </div>
-
-
-        <div class="dashboard-quicklinks">
+        <div class="row rv" style="--d:.3s">
 
             <a href="work.html" class="btn">
-                Browse projects ↗
+                Explore selected work ↗
             </a>
 
-            <a href="about.html" class="btn secondary">
-                Explore my skills ↗
+            <a href="#contact" class="link">
+                Let's connect
             </a>
 
+        </div>
+
+        <div class="mono rv" style="margin-top:4rem;color:var(--mu);--d:.4s">
+            CURRENTLY EXPLORING PYTHON · BACKEND · AI
         </div>
 
     </section>
 
 
-    <!-- INTRODUCTION -->
+    <!-- MARQUEE -->
 
-    <section class="section" id="about">
+    <div class="mq" aria-label="Technologies">
 
-        <div class="section-heading">
+        <div class="mq__t" aria-hidden="true">
 
-            <span class="eyebrow">02 / ABOUT ME</span>
+            <span>Python</span>
+            <span>Flask</span>
+            <span>JavaScript</span>
+            <span>HTML &amp; CSS</span>
+            <span>SQLite</span>
+            <span>AI Integration</span>
 
-            <h2>
-                Curiosity first.<br>
-                <span class="accent">Code follows.</span>
-            </h2>
-
-        </div>
-
-        <div class="about-content">
-
-            <p>
-                I'm a first-year BSc IT student interested in
-                technology, programming, and creating useful
-                things for the web.
-            </p>
-
-            <p>
-                I enjoy learning Python, exploring backend
-                development, and building projects that solve
-                real problems. Every project teaches me something new.
-            </p>
-
-            <a href="about.html" class="btn">
-                More about me ↗
-            </a>
+            <span>Python</span>
+            <span>Flask</span>
+            <span>JavaScript</span>
+            <span>HTML &amp; CSS</span>
+            <span>SQLite</span>
+            <span>AI Integration</span>
 
         </div>
 
-    </section>
+    </div>
 
 
-    <!-- SELECTED PROJECTS -->
+    <!-- SELECTED WORK -->
 
-    <section class="section" id="work">
+    <section class="sec wrap" id="work">
 
-        <div class="section-heading">
+        <div class="head rv">
 
-            <span class="eyebrow">03 / SELECTED WORK</span>
+            <h2>Selected work</h2>
 
-            <h2>
-                Things I've<br>
-                <span class="accent">built so far.</span>
-            </h2>
-
-            <p>
-                A few projects I've worked on while learning,
-                experimenting, and building.
-            </p>
+            <span class="mono">01 — PROJECTS</span>
 
         </div>
 
 
-        <div class="projects-grid">
+        <div class="grid">
 
-            <!-- STICKYMIND -->
+            <a href="stickymind.html" class="card rv">
 
-            <article class="project-card">
+                <div class="shot">
 
-                <img
-                    src="assets/projects/stickymind.png"
-                    alt="StickyMind application preview"
-                    loading="lazy"
-                    decoding="async"
-                >
+                    <img
+                        src="assets/projects/stickymind.png"
+                        alt="StickyMind project preview"
+                        loading="lazy"
+                    >
 
-                <div class="project-card-content">
+                </div>
 
-                    <span class="eyebrow">
-                        PRODUCTIVITY · WEB APP
-                    </span>
+                <div class="info">
+
+                    <span class="mono">01 / PRODUCTIVITY</span>
 
                     <h3>StickyMind</h3>
 
                     <p>
-                        A simple productivity application to organize
-                        notes, manage thoughts, and keep reminders close.
+                        A productivity application built to help
+                        organize thoughts and everyday tasks.
                     </p>
 
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>Flask</span>
-                        <span>SQLite</span>
-                    </div>
-
-                    <a href="stickymind.html" class="btn">
-                        View project ↗
-                    </a>
+                    <span class="mono">Python · Flask · SQLite ↗</span>
 
                 </div>
 
-            </article>
+            </a>
 
 
-            <!-- RASHAI -->
+            <a href="rashai.html" class="card rv" style="--d:.1s">
 
-            <article class="project-card">
+                <div class="shot">
 
-                <img
-                    src="assets/projects/rashai.png"
-                    alt="RashAI application preview"
-                    loading="lazy"
-                    decoding="async"
-                >
+                    <img
+                        src="assets/projects/rashai.png"
+                        alt="RashAI project preview"
+                        loading="lazy"
+                    >
 
-                <div class="project-card-content">
+                </div>
 
-                    <span class="eyebrow">
-                        AI · EDUCATION
-                    </span>
+                <div class="info">
+
+                    <span class="mono">02 / AI &amp; EDUCATION</span>
 
                     <h3>RashAI</h3>
 
                     <p>
-                        An AI-powered study companion designed to make
-                        learning and study sessions easier.
+                        An AI-powered study companion designed
+                        around a better learning experience.
                     </p>
 
-                    <div class="project-tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-
-                    <a href="rashai.html" class="btn">
-                        View project ↗
-                    </a>
+                    <span class="mono">HTML · CSS · JavaScript ↗</span>
 
                 </div>
 
-            </article>
+            </a>
 
 
-            <!-- SLIDEWALA -->
+            <a href="slidewala.html" class="card rv" style="--d:.2s">
 
-            <article class="project-card">
+                <div class="shot">
 
-                <img
-                    src="assets/projects/slidewala.png"
-                    alt="SlideWala application preview"
-                    loading="lazy"
-                    decoding="async"
-                >
+                    <img
+                        src="assets/projects/slidewala.png"
+                        alt="SlideWala project preview"
+                        loading="lazy"
+                    >
 
-                <div class="project-card-content">
+                </div>
 
-                    <span class="eyebrow">
-                        AI · CREATION TOOL
-                    </span>
+                <div class="info">
+
+                    <span class="mono">03 / AI &amp; PRODUCTIVITY</span>
 
                     <h3>SlideWala</h3>
 
                     <p>
-                        An AI presentation generator that turns ideas
-                        and topics into structured presentations.
+                        An AI-powered tool that transforms
+                        topics into PowerPoint presentations.
                     </p>
 
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>Flask</span>
-                        <span>AI APIs</span>
-                    </div>
-
-                    <a href="slidewala.html" class="btn">
-                        View project ↗
-                    </a>
+                    <span class="mono">Python · Flask · AI APIs ↗</span>
 
                 </div>
 
-            </article>
+            </a>
 
         </div>
 
 
-        <div class="dashboard-quicklinks">
+        <div class="row rv" style="justify-content:flex-end">
 
-            <a href="work.html" class="btn secondary">
+            <a href="work.html" class="link">
                 View all projects ↗
             </a>
 
@@ -518,84 +222,123 @@
     </section>
 
 
-    <!-- SKILLS -->
+    <!-- ABOUT -->
 
-    <section class="section">
+    <section class="sec wrap about" id="about">
 
-        <div class="section-heading">
+        <div class="head rv">
 
-            <span class="eyebrow">04 / MY TOOLKIT</span>
+            <h2>A little about me</h2>
 
-            <h2>
-                Learning by<br>
-                <span class="accent">building.</span>
-            </h2>
-
-            <p>
-                Technologies I currently use to experiment
-                and bring ideas to life.
-            </p>
+            <span class="mono">02 — THE PERSON</span>
 
         </div>
 
 
-        <ul class="tool-list">
+        <p class="big rv">
+            I'm interested in understanding how technology
+            works — and using that knowledge to build things
+            that are genuinely useful.
+        </p>
 
-            <li>Python <span>01</span></li>
-            <li>Flask <span>02</span></li>
-            <li>HTML &amp; CSS <span>03</span></li>
-            <li>JavaScript <span>04</span></li>
-            <li>SQLite <span>05</span></li>
-            <li>Git &amp; GitHub <span>06</span></li>
-
-        </ul>
+        <p class="rv" style="color:var(--mu);max-width:650px">
+            Currently pursuing BSc Information Technology,
+            I'm exploring programming, backend development
+            and AI-powered applications. I learn best by
+            experimenting and building real projects.
+        </p>
 
 
-        <div class="exploring">
+        <div class="row rv">
 
-            <span class="eyebrow">CURRENTLY EXPLORING</span>
-
-            <p>
-                Backend development · APIs · AI integration ·
-                Full-stack applications
-            </p>
+            <a href="about.html" class="link">
+                More about me ↗
+            </a>
 
         </div>
 
     </section>
 
 
+    <!-- TECHNOLOGIES -->
+
+    <section class="sec wrap">
+
+        <div class="head rv">
+
+            <h2>My toolkit</h2>
+
+            <span class="mono">03 — TECHNOLOGIES</span>
+
+        </div>
+
+
+        <ul class="tags rv">
+
+            <li>Python</li>
+            <li>C</li>
+            <li>Flask</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>SQLite</li>
+            <li>Git</li>
+            <li>GitHub</li>
+            <li>AI APIs</li>
+
+        </ul>
+
+    </section>
+
+
     <!-- CONTACT -->
 
-    <section class="contact-section" id="contact">
+    <section class="foot wrap" id="contact">
 
-        <div class="contact-box">
+        <div class="rv">
 
-            <span class="eyebrow">05 / GET IN TOUCH</span>
+            <span class="mono">
+                04 — HAVE SOMETHING IN MIND?
+            </span>
 
-            <h2>
-                Have an idea?<br>
+            <h2 style="margin-top:1.2rem">
                 Let's make something
-                <span class="accent">useful.</span>
+                <em style="color:var(--ac)">meaningful.</em>
             </h2>
 
-            <p>
-                Interested in collaborating, discussing ideas,
-                or just having a conversation? Feel free to reach out.
-            </p>
+            <a
+                href="mailto:rajkahar9321@gmail.com"
+                class="mail"
+            >
+                rajkahar9321@gmail.com ↗
+            </a>
 
-            <div class="contact-links">
+        </div>
 
-                <a href="mailto:rajkahar9321@gmail.com">
-                    Email me ↗
-                </a>
+
+        <div class="row">
+
+            <span class="mono">
+                © <span data-year>2026</span> RAJ KAHAR
+            </span>
+
+            <div class="row" style="margin:0;gap:1.5rem">
 
                 <a
                     href="https://github.com/Rajkahar-12"
                     target="_blank"
                     rel="noopener noreferrer"
+                    class="link"
                 >
                     GitHub ↗
+                </a>
+
+                <a href="about.html" class="link">
+                    About
+                </a>
+
+                <a href="work.html" class="link">
+                    Work
                 </a>
 
             </div>
@@ -605,23 +348,6 @@
     </section>
 
 </main>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-    <a class="brand" href="index.html">
-        raj<span>kahar</span>
-    </a>
-
-    <p>Designed &amp; built with curiosity.</p>
-
-    <p>
-        © <span data-year></span> Raj Kahar
-    </p>
-
-</footer>
 
 
 <script src="script.js" defer></script>
