@@ -4,146 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f7f5f2">
+    <meta name="theme-color" content="#0B0B0A">
 
     <title>SlideWala — Raj Kahar</title>
-    <meta name="description" content="SlideWala is an AI-powered presentation generator built with Python, Flask and AI APIs.">
+    <meta name="description" content="Explore SlideWala, an AI-powered presentation generator built by Raj Kahar.">
 
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="portfolio-redesign.css">
-
-    <style>
-        .project-hero {
-            padding: 175px 0 65px;
-        }
-
-        .project-hero h1 {
-            font-size: clamp(45px, 8vw, 76px);
-            letter-spacing: -3px;
-            line-height: 1.05;
-            margin: 20px 0;
-        }
-
-        .project-hero p {
-            max-width: 650px;
-            color: var(--muted);
-            font-size: 16px;
-            line-height: 1.8;
-        }
-
-        .project-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 25px;
-        }
-
-        .project-meta span {
-            padding: 8px 13px;
-            border-radius: 30px;
-            border: 1px solid var(--border);
-            font-size: 12px;
-            color: var(--muted);
-        }
-
-        .project-preview {
-            width: 100%;
-            overflow: hidden;
-            border-radius: 22px;
-            border: 1px solid var(--border);
-            background: var(--surface);
-            margin: 15px 0 65px;
-        }
-
-        .project-preview img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        .project-details {
-            display: grid;
-            grid-template-columns: 1.3fr .7fr;
-            gap: 35px;
-        }
-
-        .project-description h2 {
-            font-size: 27px;
-            letter-spacing: -1px;
-        }
-
-        .project-description p {
-            color: var(--muted);
-            font-size: 14px;
-            line-height: 1.9;
-        }
-
-        .project-info {
-            padding: 25px;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            background: var(--surface);
-            height: fit-content;
-        }
-
-        .project-info h3 {
-            margin-top: 0;
-            font-size: 16px;
-        }
-
-        .project-info p {
-            color: var(--muted);
-            font-size: 13px;
-            margin-bottom: 20px;
-        }
-
-        .project-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 30px;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-bottom: 25px;
-            color: var(--muted);
-            font-size: 13px;
-            text-decoration: none;
-        }
-
-        @media (max-width: 700px) {
-            .project-hero {
-                padding-top: 140px;
-            }
-
-            .project-hero h1 {
-                letter-spacing: -2px;
-            }
-
-            .project-details {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
 <header class="nav">
 
-    <a class="brand" href="index.html">
-        raj<span>kahar</span>
+    <a href="index.html" class="brand">
+        raj<span style="color:var(--ac)">.</span>
     </a>
 
-    <nav aria-label="Primary navigation">
+    <nav aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="work.html">Work</a>
         <a href="about.html">About</a>
@@ -155,185 +39,332 @@
 
 <main>
 
-    <section class="project-hero">
+    <!-- PROJECT HERO -->
 
-        <a href="work.html" class="back-link">
-            ← Back to projects
+    <section class="hero wrap proj">
+
+        <a href="work.html" class="link rv">
+            ← Back to selected work
         </a>
 
-        <span class="eyebrow">PROJECT 03 / AI &amp; PRODUCTIVITY</span>
+        <span class="mono eyebrow rv" style="--d:.1s">
+            PROJECT 03 / AI & PRODUCTIVITY
+        </span>
 
-        <h1>
-            Slide<span class="accent">Wala.</span>
+        <h1 class="rv" style="--d:.2s">
+            Slide<em>Wala.</em>
         </h1>
 
-        <p>
-            An AI-powered presentation generator that turns
-            ideas and topics into structured presentations
-            with less manual effort.
+        <p class="lede rv" style="--d:.3s">
+            Turning ideas into presentations.
+            An AI-powered presentation generator
+            built to make creating slides easier.
         </p>
 
-        <div class="project-meta">
-            <span>Python</span>
-            <span>Flask</span>
-            <span>AI APIs</span>
-            <span>python-pptx</span>
+        <div class="row rv" style="--d:.4s">
+
+            <a
+                href="https://slidewala.onrender.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn"
+            >
+                Visit live project ↗
+            </a>
+
+            <a
+                href="https://github.com/Rajkahar-12/slidewala"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link"
+            >
+                View source code
+            </a>
+
+        </div>
+
+        <dl class="facts rv">
+
+            <div>
+                <dt class="mono">CATEGORY</dt>
+                <dd>AI & Productivity</dd>
+            </div>
+
+            <div>
+                <dt class="mono">STACK</dt>
+                <dd>Python · Flask</dd>
+            </div>
+
+            <div>
+                <dt class="mono">AI</dt>
+                <dd>OpenRouter</dd>
+            </div>
+
+            <div>
+                <dt class="mono">TYPE</dt>
+                <dd>Web application</dd>
+            </div>
+
+        </dl>
+
+    </section>
+
+
+    <!-- PROJECT PREVIEW -->
+
+    <section class="wrap">
+
+        <div class="shot big rv">
+
+            <img
+                src="assets/projects/slidewala.png"
+                alt="SlideWala presentation generator interface"
+                loading="lazy"
+            >
+
         </div>
 
     </section>
 
 
-    <section class="project-preview" data-reveal>
+    <!-- PROJECT OVERVIEW -->
 
-        <img
-            src="assets/projects/slidewala.png"
-            alt="SlideWala presentation generator preview"
-            loading="lazy"
-        >
+    <section class="sec wrap">
+
+        <div class="head rv">
+
+            <h2>Behind the project</h2>
+
+            <span class="mono">01 — OVERVIEW</span>
+
+        </div>
+
+
+        <div class="about">
+
+            <p class="big rv">
+                From a simple idea to a complete presentation.
+            </p>
+
+            <p class="rv">
+                SlideWala is an AI-powered web application
+                designed to help users generate presentation
+                content from a topic.
+            </p>
+
+            <p class="rv" style="margin-top:1rem">
+                Users can customize their presentation
+                based on slide count, audience, tone and
+                visual theme. The generated content can
+                then be exported as a PowerPoint file.
+            </p>
+
+        </div>
 
     </section>
 
 
-    <section class="section">
+    <!-- FEATURES -->
 
-        <div class="project-details">
+    <section class="sec wrap">
 
-            <div class="project-description">
+        <div class="head rv">
 
-                <span class="eyebrow">ABOUT THE PROJECT</span>
+            <h2>Inside SlideWala</h2>
 
-                <h2>From an idea to a presentation.</h2>
+            <span class="mono">02 — EXPERIENCE</span>
 
-                <p>
-                    SlideWala is an AI-powered web application
-                    designed to help users generate presentation
-                    content from a topic.
-                </p>
+        </div>
 
-                <p>
-                    Users can customize their presentation
-                    preferences, including the number of slides,
-                    audience, tone and visual theme.
-                </p>
 
-                <p>
-                    The application uses Python and Flask on the
-                    backend, AI APIs for content generation and
-                    python-pptx to create downloadable PowerPoint
-                    presentations.
-                </p>
+        <div class="grid">
 
-                <p>
-                    Working on SlideWala helped me explore API
-                    integration, backend development, file
-                    generation and building a more complete
-                    web application.
-                </p>
+            <article class="card rv">
 
-                <div class="project-actions">
+                <div class="info">
 
-                    <a
-                        href="https://slidewala.onrender.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn"
-                    >
-                        Visit live project ↗
-                    </a>
+                    <span class="mono">01 / GENERATION</span>
 
-                    <a
-                        href="https://github.com/Rajkahar-12/slidewala"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn secondary"
-                    >
-                        View source code ↗
-                    </a>
+                    <h3>AI-powered content</h3>
+
+                    <p>
+                        Generate presentation content
+                        from a topic using AI models
+                        through OpenRouter.
+                    </p>
 
                 </div>
 
-            </div>
+            </article>
 
 
-            <aside class="project-info">
+            <article class="card rv" style="--d:.1s">
 
-                <h3>Project details</h3>
+                <div class="info">
 
-                <p>
-                    <strong>Category</strong><br>
-                    AI presentation generator
-                </p>
+                    <span class="mono">02 / CUSTOMIZATION</span>
 
-                <p>
-                    <strong>Backend</strong><br>
-                    Python · Flask
-                </p>
+                    <h3>Your presentation style</h3>
 
-                <p>
-                    <strong>AI integration</strong><br>
-                    AI APIs
-                </p>
+                    <p>
+                        Choose presentation length,
+                        audience, writing tone and
+                        visual theme.
+                    </p>
 
-                <p>
-                    <strong>File generation</strong><br>
-                    python-pptx
-                </p>
+                </div>
 
-            </aside>
+            </article>
+
+
+            <article class="card rv">
+
+                <div class="info">
+
+                    <span class="mono">03 / EXPORT</span>
+
+                    <h3>PowerPoint files</h3>
+
+                    <p>
+                        Turn generated presentation
+                        content into downloadable
+                        PowerPoint files.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="card rv" style="--d:.1s">
+
+                <div class="info">
+
+                    <span class="mono">04 / DESIGN</span>
+
+                    <h3>Visual experience</h3>
+
+                    <p>
+                        Multiple presentation themes
+                        help users create slides with
+                        different visual styles.
+                    </p>
+
+                </div>
+
+            </article>
 
         </div>
 
     </section>
 
 
-    <section class="contact-section">
+    <!-- TECHNOLOGIES -->
 
-        <div class="contact-box">
+    <section class="sec wrap">
 
-            <span class="eyebrow">THANK YOU FOR EXPLORING</span>
+        <div class="head rv">
 
-            <h2>
-                More ideas.<br>
-                More things to <span class="accent">build.</span>
+            <h2>Built with</h2>
+
+            <span class="mono">03 — TECHNOLOGY</span>
+
+        </div>
+
+        <ul class="tags rv">
+
+            <li>Python</li>
+            <li>Flask</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>OpenRouter</li>
+            <li>python-pptx</li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- NEXT PROJECT -->
+
+    <section class="sec wrap">
+
+        <div class="head rv">
+
+            <h2>Back to the beginning</h2>
+
+            <span class="mono">04 — EXPLORE MORE</span>
+
+        </div>
+
+        <a href="stickymind.html" class="next rv">
+
+            <div>
+
+                <span class="mono">EXPLORE PROJECT / 01</span>
+
+                <div class="nm">StickyMind ↗</div>
+
+            </div>
+
+            <span class="mono">PRODUCTIVITY</span>
+
+        </a>
+
+        <div class="row rv">
+
+            <a href="work.html" class="link">
+                View all projects ↗
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="foot wrap">
+
+        <div class="rv">
+
+            <span class="mono">LET'S BUILD SOMETHING</span>
+
+            <h2 style="margin-top:1rem">
+                Have an idea?
             </h2>
 
-            <p>
-                This is just the beginning. I'm continuously
-                learning, experimenting and building new things.
-            </p>
-
-            <div class="hero-actions">
-
-                <a href="work.html" class="btn">
-                    Explore all projects
-                </a>
-
-                <a href="index.html#contact" class="btn secondary">
-                    Get in touch
-                </a>
-
-            </div>
+            <a
+                href="mailto:rajkahar9321@gmail.com"
+                class="mail"
+            >
+                rajkahar9321@gmail.com ↗
+            </a>
 
         </div>
 
-    </section>
+
+        <div class="row">
+
+            <span class="mono">
+                © <span data-year>2026</span> RAJ KAHAR
+            </span>
+
+            <a
+                href="https://github.com/Rajkahar-12"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link"
+            >
+                GitHub ↗
+            </a>
+
+        </div>
+
+    </footer>
 
 </main>
-
-
-<footer>
-
-    <a class="brand" href="index.html">
-        raj<span>kahar</span>
-    </a>
-
-    <p>Designed &amp; built with curiosity.</p>
-
-    <p>
-        © <span data-year></span> Raj Kahar
-    </p>
-
-</footer>
 
 
 <script src="script.js" defer></script>
