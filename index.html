@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Raj Kahar — Developer & Builder</title>
+  <meta name="description" content="Portfolio of Raj Kahar — developer and BSc IT student building useful things with Python, the web, and AI.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -14,43 +15,42 @@
   <header class="nav">
     <a class="brand" href="index.html">raj<span>.</span></a>
     <nav>
-      <a href="index.html">Home</a>
+      <a href="index.html" class="active">Home</a>
       <a href="#work">Work</a>
       <a href="about.html">About</a>
       <a href="#contact">Contact</a>
     </nav>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
     <button class="theme-toggle" type="button" aria-label="Switch theme">☀</button>
   </header>
 
   <main>
-
-    <section class="section">
+    <section class="section rv" style="padding-top: clamp(5rem, 10vw, 7rem);">
       <p class="eyebrow">PORTFOLIO / 2026 — DEVELOPER & BUILDER</p>
-      <h1>Turning ideas into digital experiences.</h1>
-      <p class="text-muted">
-        Hey, I'm Raj. A developer and BSc IT student exploring technology,
-        building useful products and learning through experimentation.
+      <h1>Turning ideas into <em>digital experiences</em>.</h1>
+      <p class="text-muted" style="font-size: 1.02rem; max-width: 56ch;">
+        Hey, I'm Raj — a developer and BSc IT student exploring technology,
+        building useful products, and learning through experimentation.
       </p>
-      <p>
-        <a href="#work" class="text-muted">Explore selected work ↗</a>
-        &nbsp;·&nbsp;
-        <a href="#contact" class="text-muted">Let's connect</a>
+      <p style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.6rem;">
+        <a href="#work" class="btn btn--glass">Explore selected work ↗</a>
+        <a href="#contact" class="btn">Let's connect</a>
       </p>
     </section>
 
-    <section class="section">
+    <section class="section rv">
       <p class="eyebrow">CURRENTLY EXPLORING</p>
       <p class="text-muted">Python · Backend · AI</p>
     </section>
 
-    <section class="section" id="work">
+    <section class="section rv" id="work">
       <div class="section-header">
         <p class="eyebrow">01 — PROJECTS</p>
         <h2>Selected work</h2>
       </div>
 
       <div class="project-grid">
-        <a class="project-card rv" href="stickymind.html">
+        <a class="project-card" href="stickymind.html">
           <figure class="project-media">
             <img src="assets/projects/stickymind.png" alt="StickyMind project screenshot" loading="lazy">
           </figure>
@@ -58,11 +58,11 @@
             <p class="project-label">PRODUCTIVITY</p>
             <h3 class="project-title">StickyMind</h3>
             <p class="project-desc">A productivity application built to help organize thoughts and everyday tasks.</p>
-            <p class="text-muted">Python · Flask · SQLite ↗</p>
+            <p class="project-tags">Python · Flask · SQLite</p>
           </div>
         </a>
 
-        <a class="project-card rv" href="rashai.html">
+        <a class="project-card" href="rashai.html">
           <figure class="project-media">
             <img src="assets/projects/rashai.png" alt="RashAI study companion screenshot" loading="lazy">
           </figure>
@@ -70,11 +70,11 @@
             <p class="project-label">AI & EDUCATION</p>
             <h3 class="project-title">RashAI</h3>
             <p class="project-desc">An AI-powered study companion designed around a better learning experience.</p>
-            <p class="text-muted">HTML · CSS · JavaScript ↗</p>
+            <p class="project-tags">HTML · CSS · JavaScript</p>
           </div>
         </a>
 
-        <a class="project-card rv" href="slidewala.html">
+        <a class="project-card" href="slidewala.html">
           <figure class="project-media">
             <img src="assets/projects/slidewala.png" alt="SlideWala presentation generator screenshot" loading="lazy">
           </figure>
@@ -82,17 +82,13 @@
             <p class="project-label">AI & PRODUCTIVITY</p>
             <h3 class="project-title">SlideWala</h3>
             <p class="project-desc">An AI-powered tool that transforms topics into PowerPoint presentations.</p>
-            <p class="text-muted">Python · Flask · AI APIs ↗</p>
+            <p class="project-tags">Python · Flask · AI APIs</p>
           </div>
         </a>
       </div>
-
-      <p style="margin-top: 2rem;">
-        <a href="#work" class="text-muted">View all projects ↗</a>
-      </p>
     </section>
 
-    <section class="section">
+    <section class="section rv">
       <div class="section-header">
         <p class="eyebrow">02 — THE PERSON</p>
         <h2>A little about me</h2>
@@ -109,7 +105,7 @@
       <p><a href="about.html" class="text-muted">More about me ↗</a></p>
     </section>
 
-    <section class="section">
+    <section class="section rv">
       <div class="section-header">
         <p class="eyebrow">03 — TECHNOLOGIES</p>
         <h2>My toolkit</h2>
@@ -117,25 +113,24 @@
       <p class="text-muted">Python · C · Flask · HTML · CSS · JavaScript · SQLite · Git · GitHub · AI APIs</p>
     </section>
 
-    <section class="section" id="contact">
+    <section class="section rv" id="contact">
       <div class="section-header">
         <p class="eyebrow">04 — HAVE SOMETHING IN MIND?</p>
         <h2>Let's make something meaningful.</h2>
       </div>
-      <p><a href="mailto:rajkahar9321@gmail.com" class="text-muted">rajkahar9321@gmail.com ↗</a></p>
+      <p><a href="mailto:rajkahar9321@gmail.com" class="btn btn--glass">rajkahar9321@gmail.com ↗</a></p>
     </section>
-
   </main>
 
-  <footer class="section">
-    <p class="text-muted">© 2026 RAJ KAHAR</p>
-    <p>
-      <a href="https://github.com/Rajkahar-12" class="text-muted">GitHub ↗</a>
-      &nbsp;·&nbsp;
-      <a href="about.html" class="text-muted">About</a>
-      &nbsp;·&nbsp;
-      <a href="index.html#work" class="text-muted">Work</a>
-    </p>
+  <footer class="footer">
+    <div class="section" style="padding-block: 0; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; align-items: center;">
+      <p class="text-muted" style="margin: 0; font-size: 0.8rem; letter-spacing: 0.08em;">© 2026 RAJ KAHAR</p>
+      <p style="margin: 0; display: flex; gap: 1.25rem;">
+        <a href="https://github.com/Rajkahar-12" class="text-muted" style="font-size: 0.82rem;" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="about.html" class="text-muted" style="font-size: 0.82rem;">About</a>
+        <a href="#work" class="text-muted" style="font-size: 0.82rem;">Work</a>
+      </p>
+    </div>
   </footer>
 
   <script src="script.js" defer></script>
