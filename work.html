@@ -4,26 +4,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f8f5f0">
+    <meta name="theme-color" content="#f7f5f2">
 
-    <title>My Work — Raj Kahar</title>
-    <meta name="description" content="Explore digital projects built by Raj Kahar, including StickyMind, RashAI and SlideWala.">
+    <title>Work — Raj Kahar</title>
+    <meta name="description" content="Explore projects built by Raj Kahar using Python, Flask, AI and modern web technologies.">
 
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="portfolio-redesign.css">
+
+    <style>
+        .work-intro {
+            padding: 175px 0 65px;
+        }
+
+        .work-intro h1 {
+            font-size: clamp(42px, 7vw, 72px);
+            line-height: 1.08;
+            letter-spacing: -3px;
+            margin: 18px 0;
+        }
+
+        .work-intro p {
+            max-width: 600px;
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        .work-count {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 9px 13px;
+            margin-top: 18px;
+            border-radius: 12px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .work-count strong {
+            color: var(--accent);
+        }
+
+        .work-projects {
+            padding: 20px 0 100px;
+        }
+
+        .work-projects .project-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .work-projects .project-card img {
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+
+        .work-projects .project-card-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .work-projects .project-card-content .btn {
+            margin-top: auto;
+        }
+
+        .work-note {
+            margin-top: 35px;
+            padding: 24px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+        }
+
+        .work-note p {
+            color: var(--muted);
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 600px) {
+            .work-intro {
+                padding-top: 140px;
+            }
+
+            .work-intro h1 {
+                letter-spacing: -2px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <header class="nav">
-    <a class="brand" href="index.html" aria-label="Raj Kahar home">
+
+    <a class="brand" href="index.html">
         raj<span>kahar</span>
     </a>
 
@@ -33,38 +119,58 @@
         <a href="about.html">About</a>
         <a href="index.html#contact">Contact</a>
     </nav>
+
 </header>
+
 
 <main>
 
-    <section class="about-intro">
-        <span class="eyebrow">MY PORTFOLIO / 01</span>
+    <!-- INTRO -->
+
+    <section class="work-intro">
+
+        <span class="eyebrow">MY PROJECTS / PORTFOLIO</span>
 
         <h1>
-            Things I've<br>
-            <span class="accent">built so far.</span>
+            Ideas into<br>
+            <span class="accent">reality.</span>
         </h1>
 
         <p>
-            A collection of digital projects I've created while
-            learning, experimenting, and turning ideas into
-            working products.
+            A collection of digital products and experiments
+            I've worked on while learning, exploring technology,
+            and turning ideas into something useful.
         </p>
+
+        <div class="work-count">
+            <strong>03</strong>
+            Featured projects
+        </div>
+
     </section>
 
 
-    <section class="section">
+    <!-- PROJECTS -->
+
+    <section class="work-projects">
 
         <div class="section-heading">
-            <span class="eyebrow">SELECTED PROJECTS</span>
-            <h2>From ideas to reality.</h2>
+
+            <span class="eyebrow">01 / PROJECT COLLECTION</span>
+
+            <h2>Selected work.</h2>
+
             <p>
-                Each project represents something new I've learned
-                and built along the way.
+                Each project represents a different idea,
+                challenge and learning experience.
             </p>
+
         </div>
 
+
         <div class="projects-grid">
+
+            <!-- STICKYMIND -->
 
             <article class="project-card">
 
@@ -77,14 +183,16 @@
 
                 <div class="project-card-content">
 
-                    <span class="eyebrow">01 / PRODUCTIVITY</span>
+                    <span class="eyebrow">
+                        PRODUCTIVITY · WEB APPLICATION
+                    </span>
 
                     <h3>StickyMind</h3>
 
                     <p>
-                        A productivity web application that helps
-                        users organize notes, manage thoughts,
-                        and keep reminders in one place.
+                        A productivity application designed to
+                        organize notes, manage thoughts and
+                        keep important reminders in one place.
                     </p>
 
                     <div class="project-tags">
@@ -93,13 +201,16 @@
                         <span>SQLite</span>
                     </div>
 
-                    <a href="stickymind.html" class="btn small">
-                        View project ↗
+                    <a href="stickymind.html" class="btn">
+                        Explore project ↗
                     </a>
 
                 </div>
+
             </article>
 
+
+            <!-- RASHAI -->
 
             <article class="project-card">
 
@@ -112,14 +223,16 @@
 
                 <div class="project-card-content">
 
-                    <span class="eyebrow">02 / ARTIFICIAL INTELLIGENCE</span>
+                    <span class="eyebrow">
+                        ARTIFICIAL INTELLIGENCE · EDUCATION
+                    </span>
 
                     <h3>RashAI</h3>
 
                     <p>
                         An AI-powered study companion designed
-                        to support students with learning,
-                        explanations, and study sessions.
+                        to help students explore topics and
+                        make learning easier.
                     </p>
 
                     <div class="project-tags">
@@ -128,13 +241,16 @@
                         <span>JavaScript</span>
                     </div>
 
-                    <a href="rashai.html" class="btn small">
-                        View project ↗
+                    <a href="rashai.html" class="btn">
+                        Explore project ↗
                     </a>
 
                 </div>
+
             </article>
 
+
+            <!-- SLIDEWALA -->
 
             <article class="project-card">
 
@@ -147,7 +263,9 @@
 
                 <div class="project-card-content">
 
-                    <span class="eyebrow">03 / AI CREATION TOOL</span>
+                    <span class="eyebrow">
+                        AI · PRESENTATION GENERATOR
+                    </span>
 
                     <h3>SlideWala</h3>
 
@@ -162,65 +280,50 @@
                         <span>AI APIs</span>
                     </div>
 
-                    <a href="slidewala.html" class="btn small">
-                        View project ↗
+                    <a href="slidewala.html" class="btn">
+                        Explore project ↗
                     </a>
 
                 </div>
+
             </article>
 
         </div>
 
-    </section>
 
+        <div class="work-note">
 
-    <section class="contact-section">
+            <span class="eyebrow">MORE COMING SOON</span>
 
-        <div class="contact-box">
-
-            <span class="eyebrow">HAVE AN IDEA?</span>
-
-            <h2>
-                Let's build something
-                <span class="accent">together.</span>
-            </h2>
+            <h3>Still building. Still learning.</h3>
 
             <p>
-                I'm always interested in exploring ideas,
-                learning new things, and building useful projects.
+                I'm continuously experimenting with new ideas
+                and technologies. More projects will find
+                their way here.
             </p>
 
-            <div class="contact-links">
-
-                <a href="index.html#contact">
-                    Get in touch ↗
-                </a>
-
-                <a
-                    href="https://github.com/Rajkahar-12"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    GitHub ↗
-                </a>
-
-            </div>
-
         </div>
+
     </section>
 
 </main>
 
 
 <footer>
+
     <a class="brand" href="index.html">
         raj<span>kahar</span>
     </a>
 
     <p>Designed &amp; built with curiosity.</p>
 
-    <p>© <span data-year></span> Raj Kahar</p>
+    <p>
+        © <span data-year></span> Raj Kahar
+    </p>
+
 </footer>
+
 
 <script src="script.js" defer></script>
 
