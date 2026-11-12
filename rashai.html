@@ -1,364 +1,97 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0B0B0A">
-
-    <title>RashAI — Raj Kahar</title>
-    <meta name="description" content="Explore RashAI, an AI-powered study companion built by Raj Kahar.">
-
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RashAI — Raj Kahar</title>
+  <meta name="description" content="RashAI — an AI-powered study companion designed around a better learning experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portfolio-redesign.css">
 </head>
-
 <body>
 
-<header class="nav">
-
-    <a href="index.html" class="brand">
-        raj<span style="color:var(--ac)">.</span>
-    </a>
-
-    <nav aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="work.html">Work</a>
-        <a href="about.html">About</a>
-        <a href="index.html#contact">Contact</a>
+  <header class="nav">
+    <a class="brand" href="index.html">raj<span>.</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#work" class="active">Work</a>
+      <a href="about.html">About</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch theme">☀</button>
+  </header>
 
-</header>
+  <main>
 
-
-<main>
-
-    <!-- PROJECT HERO -->
-
-    <section class="hero wrap proj">
-
-        <a href="work.html" class="link rv">
-            ← Back to selected work
+    <section class="section rv">
+      <p class="eyebrow">CASE STUDY — AI & EDUCATION</p>
+      <h1>RashAI</h1>
+      <p class="text-muted">
+        An AI-powered study companion designed around a better learning
+        experience — built to make studying feel more focused and human.
+      </p>
+      <p>
+        <a href="https://rashai.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn--glass">
+          Visit live project ↗
         </a>
-
-        <span class="mono eyebrow rv" style="--d:.1s">
-            PROJECT 02 / AI & EDUCATION
-        </span>
-
-        <h1 class="rv" style="--d:.2s">
-            Rash<em>AI.</em>
-        </h1>
-
-        <p class="lede rv" style="--d:.3s">
-            A study companion designed to make learning
-            more interactive, accessible and engaging
-            through AI-powered assistance.
-        </p>
-
-        <div class="row rv" style="--d:.4s">
-
-            <a
-                href="https://rashai.onrender.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn"
-            >
-                Visit live project ↗
-            </a>
-
-        </div>
-
-        <dl class="facts rv">
-
-            <div>
-                <dt class="mono">CATEGORY</dt>
-                <dd>AI & Education</dd>
-            </div>
-
-            <div>
-                <dt class="mono">STACK</dt>
-                <dd>HTML · CSS · JavaScript</dd>
-            </div>
-
-            <div>
-                <dt class="mono">FOCUS</dt>
-                <dd>Learning experience</dd>
-            </div>
-
-            <div>
-                <dt class="mono">TYPE</dt>
-                <dd>Web application</dd>
-            </div>
-
-        </dl>
-
+      </p>
     </section>
 
-
-    <!-- PROJECT PREVIEW -->
-
-    <section class="wrap">
-
-        <div class="shot big rv">
-
-            <img
-                src="assets/projects/rashai.png"
-                alt="RashAI study companion interface"
-                loading="lazy"
-            >
-
-        </div>
-
+    <section class="section rv">
+      <figure class="project-media" style="aspect-ratio: 16 / 10;">
+        <img src="assets/projects/rashai.png" alt="RashAI study companion screenshot" loading="eager">
+      </figure>
     </section>
 
-
-    <!-- PROJECT OVERVIEW -->
-
-    <section class="sec wrap">
-
-        <div class="head rv">
-
-            <h2>Behind the project</h2>
-
-            <span class="mono">01 — OVERVIEW</span>
-
+    <section class="section rv">
+      <div class="section-header">
+        <p class="eyebrow">01 — OVERVIEW</p>
+        <h2>What it does</h2>
+      </div>
+      <div class="project-grid">
+        <div class="project-meta">
+          <p class="project-label">CATEGORY</p>
+          <p>AI · Education</p>
+          <p class="project-label" style="margin-top: 1rem;">STACK</p>
+          <p>HTML · CSS · JavaScript</p>
+          <p class="project-label" style="margin-top: 1rem;">ROLE</p>
+          <p>Design & development</p>
+          <p class="project-label" style="margin-top: 1rem;">LIVE</p>
+          <p><a href="https://rashai.onrender.com" target="_blank" rel="noopener noreferrer" class="text-muted">rashai.onrender.com ↗</a></p>
         </div>
-
-
-        <div class="about">
-
-            <p class="big rv">
-                Making AI feel like a helpful study partner.
-            </p>
-
-            <p class="rv">
-                RashAI is an AI-powered study companion
-                created to help students explore topics,
-                understand concepts and make their
-                learning experience more interactive.
-            </p>
-
-            <p class="rv" style="margin-top:1rem">
-                The interface focuses on a clean study
-                environment with features such as
-                mathematical formatting, voice interaction
-                and file support.
-            </p>
-
+        <div>
+          <p class="text-muted">
+            RashAI is a study companion that uses AI to support learning —
+            helping students work through material with structure and
+            guidance instead of passive reading.
+          </p>
+          <p class="text-muted">
+            The interface was built with HTML, CSS, and JavaScript, with the
+            AI layer integrated through a backend API and deployed to Render.
+          </p>
         </div>
-
+      </div>
     </section>
 
-
-    <!-- FEATURES -->
-
-    <section class="sec wrap">
-
-        <div class="head rv">
-
-            <h2>Designed for learning</h2>
-
-            <span class="mono">02 — EXPERIENCE</span>
-
-        </div>
-
-
-        <div class="grid">
-
-            <article class="card rv">
-
-                <div class="info">
-
-                    <span class="mono">01 / AI ASSISTANCE</span>
-
-                    <h3>Study companion</h3>
-
-                    <p>
-                        An interactive space where students
-                        can get assistance while exploring
-                        different learning topics.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="card rv" style="--d:.1s">
-
-                <div class="info">
-
-                    <span class="mono">02 / MATHEMATICS</span>
-
-                    <h3>Formula formatting</h3>
-
-                    <p>
-                        Mathematical expressions are
-                        displayed using KaTeX for clearer
-                        reading and understanding.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="card rv">
-
-                <div class="info">
-
-                    <span class="mono">03 / VOICE</span>
-
-                    <h3>Voice interaction</h3>
-
-                    <p>
-                        Voice input and language selection
-                        make the study experience more
-                        accessible and interactive.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="card rv" style="--d:.1s">
-
-                <div class="info">
-
-                    <span class="mono">04 / FILES</span>
-
-                    <h3>File support</h3>
-
-                    <p>
-                        File upload and download controls
-                        help make working with study
-                        materials more convenient.
-                    </p>
-
-                </div>
-
-            </article>
-
-        </div>
-
+    <section class="section rv">
+      <p><a href="index.html#work" class="text-muted">← Back to all projects</a></p>
     </section>
 
+  </main>
 
-    <!-- TECHNOLOGIES -->
+  <footer class="section">
+    <p class="text-muted">© 2026 RAJ KAHAR</p>
+    <p>
+      <a href="https://github.com/Rajkahar-12" class="text-muted" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      &nbsp;·&nbsp;
+      <a href="about.html" class="text-muted">About</a>
+      &nbsp;·&nbsp;
+      <a href="index.html#work" class="text-muted">Work</a>
+    </p>
+  </footer>
 
-    <section class="sec wrap">
-
-        <div class="head rv">
-
-            <h2>Built with</h2>
-
-            <span class="mono">03 — TECHNOLOGY</span>
-
-        </div>
-
-        <ul class="tags rv">
-
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>Flask</li>
-            <li>KaTeX</li>
-
-        </ul>
-
-    </section>
-
-
-    <!-- NEXT PROJECT -->
-
-    <section class="sec wrap">
-
-        <div class="head rv">
-
-            <h2>Keep exploring</h2>
-
-            <span class="mono">04 — NEXT PROJECT</span>
-
-        </div>
-
-        <a href="slidewala.html" class="next rv">
-
-            <div>
-
-                <span class="mono">NEXT PROJECT / 03</span>
-
-                <div class="nm">SlideWala ↗</div>
-
-            </div>
-
-            <span class="mono">AI & PRESENTATIONS</span>
-
-        </a>
-
-        <div class="row rv">
-
-            <a href="work.html" class="link">
-                View all projects ↗
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-
-    <footer class="foot wrap">
-
-        <div class="rv">
-
-            <span class="mono">LET'S BUILD SOMETHING</span>
-
-            <h2 style="margin-top:1rem">
-                Have an idea?
-            </h2>
-
-            <a
-                href="mailto:rajkahar9321@gmail.com"
-                class="mail"
-            >
-                rajkahar9321@gmail.com ↗
-            </a>
-
-        </div>
-
-
-        <div class="row">
-
-            <span class="mono">
-                © <span data-year>2026</span> RAJ KAHAR
-            </span>
-
-            <a
-                href="https://github.com/Rajkahar-12"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="link"
-            >
-                GitHub ↗
-            </a>
-
-        </div>
-
-    </footer>
-
-</main>
-
-
-<script src="script.js" defer></script>
-
+  <script src="script.js" defer></script>
 </body>
 </html>
