@@ -1,290 +1,276 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0B0B0A">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#230c22">
 
-    <title>Selected Work — Raj Kahar</title>
-    <meta name="description" content="Explore digital products and experiments built by Raj Kahar.">
+  <title>Selected Work — Raj Kahar</title>
+  <meta name="description" content="Explore digital products and experiments built by Raj Kahar.">
 
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="portfolio-redesign.css">
 </head>
 
 <body>
 
-<header class="nav">
+  <!-- NAVIGATION -->
+  <header class="nav">
 
-    <a href="index.html" class="brand">
-        raj<span style="color:var(--ac)">.</span>
+    <a class="brand" href="index.html">
+      raj<span>.</span>
     </a>
 
     <nav aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="work.html" aria-current="page">Work</a>
-        <a href="about.html">About</a>
-        <a href="index.html#contact">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="work.html" class="active" aria-current="page">Work</a>
+      <a href="about.html">About</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
 
-</header>
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >☰</button>
+
+    <button
+      class="theme-toggle"
+      type="button"
+      aria-label="Switch theme"
+    >☀</button>
+
+  </header>
 
 
-<main>
+  <main>
 
-    <!-- PAGE INTRO -->
+    <!-- HERO -->
+    <section class="section rv" style="padding-top: clamp(7rem, 12vw, 9rem);">
 
-    <section class="hero wrap">
+      <p class="eyebrow">PORTFOLIO / 01 — SELECTED WORK</p>
 
-        <span class="mono eyebrow rv">
-            PORTFOLIO / 01 — SELECTED WORK
-        </span>
+      <h1>
+        Things I've <em>built.</em>
+      </h1>
 
-        <h1 class="rv" style="--d:.1s">
-            Things I've
-            <em>built.</em>
-        </h1>
+      <p class="text-muted" style="font-size: 1.02rem; max-width: 58ch;">
+        A collection of ideas turned into digital products.
+        Every project represents a part of my journey as a developer —
+        learning, experimenting and building along the way.
+      </p>
 
-        <p class="lede rv" style="--d:.2s">
-            A collection of ideas turned into digital products.
-            Each project is a part of my journey as a developer —
-            learning, experimenting and building along the way.
-        </p>
-
-        <div class="row rv" style="--d:.3s">
-
-            <span class="mono" style="color:var(--mu)">
-                03 FEATURED PROJECTS
-            </span>
-
-            <span class="mono" style="color:var(--mu)">
-                INDIA · 2026
-            </span>
-
-        </div>
-
-    </section>
-
-
-    <!-- PROJECT COLLECTION -->
-
-    <section class="sec wrap">
-
-        <div class="head rv">
-
-            <h2>Project archive</h2>
-
-            <span class="mono">01 — 03</span>
-
-        </div>
-
-
-        <div class="grid">
-
-
-            <!-- STICKYMIND -->
-
-            <a href="stickymind.html" class="card rv">
-
-                <div class="shot">
-
-                    <img
-                        src="assets/projects/stickymind.png"
-                        alt="StickyMind application preview"
-                        loading="lazy"
-                    >
-
-                </div>
-
-                <div class="info">
-
-                    <span class="mono">01 / PRODUCTIVITY</span>
-
-                    <h3>StickyMind</h3>
-
-                    <p>
-                        A productivity application designed to
-                        organize notes, manage thoughts and keep
-                        important reminders in one place.
-                    </p>
-
-                    <span class="mono">
-                        PYTHON · FLASK · SQLITE ↗
-                    </span>
-
-                </div>
-
-            </a>
-
-
-            <!-- RASHAI -->
-
-            <a href="rashai.html" class="card rv" style="--d:.12s">
-
-                <div class="shot">
-
-                    <img
-                        src="assets/projects/rashai.png"
-                        alt="RashAI application preview"
-                        loading="lazy"
-                    >
-
-                </div>
-
-                <div class="info">
-
-                    <span class="mono">02 / ARTIFICIAL INTELLIGENCE</span>
-
-                    <h3>RashAI</h3>
-
-                    <p>
-                        An AI-powered study companion designed
-                        to make exploring topics and learning
-                        more accessible.
-                    </p>
-
-                    <span class="mono">
-                        HTML · CSS · JAVASCRIPT ↗
-                    </span>
-
-                </div>
-
-            </a>
-
-
-            <!-- SLIDEWALA -->
-
-            <a href="slidewala.html" class="card rv" style="--d:.24s">
-
-                <div class="shot">
-
-                    <img
-                        src="assets/projects/slidewala.png"
-                        alt="SlideWala application preview"
-                        loading="lazy"
-                    >
-
-                </div>
-
-                <div class="info">
-
-                    <span class="mono">03 / AI &amp; PRODUCTIVITY</span>
-
-                    <h3>SlideWala</h3>
-
-                    <p>
-                        An AI presentation generator that turns
-                        topics and ideas into structured
-                        PowerPoint presentations.
-                    </p>
-
-                    <span class="mono">
-                        PYTHON · FLASK · AI APIS ↗
-                    </span>
-
-                </div>
-
-            </a>
-
-
-        </div>
+      <div style="display:flex; flex-wrap:wrap; gap:1.5rem; margin-top:2rem;">
+        <span class="eyebrow">03 FEATURED PROJECTS</span>
+        <span class="text-muted" style="font-size:0.8rem;">INDIA · 2026</span>
+      </div>
 
     </section>
 
 
-    <!-- CLOSING SECTION -->
+    <!-- PROJECT ARCHIVE -->
+    <section class="section rv">
 
-    <section class="sec wrap about">
-
-        <div class="head rv">
-
-            <h2>What's next?</h2>
-
-            <span class="mono">02 — CONTINUOUSLY BUILDING</span>
-
-        </div>
-
-        <p class="big rv">
-            The best ideas are still waiting to be built.
+      <div class="section-header">
+        <p class="eyebrow">01 — THE COLLECTION</p>
+        <h2>Project archive</h2>
+        <p class="text-muted">
+          A closer look at the things I've been working on.
         </p>
-
-        <p class="rv" style="color:var(--mu);max-width:600px">
-            I'm always exploring new technologies, learning
-            new skills and experimenting with ideas.
-            This collection will keep growing.
-        </p>
-
-        <div class="row rv">
-
-            <a href="about.html" class="link">
-                Get to know me ↗
-            </a>
-
-        </div>
-
-    </section>
+      </div>
 
 
-    <!-- FOOTER -->
+      <div class="project-grid">
 
-    <footer class="foot wrap">
+        <!-- STICKYMIND -->
+        <a class="project-card" href="stickymind.html">
 
-        <div class="rv">
-
-            <span class="mono">HAVE AN IDEA?</span>
-
-            <h2 style="margin-top:1rem">
-                Let's talk.
-            </h2>
-
-            <a
-                href="mailto:rajkahar9321@gmail.com"
-                class="mail"
+          <figure class="project-media">
+            <img
+              src="assets/projects/stickymind.png"
+              alt="StickyMind application preview"
+              loading="lazy"
             >
-                rajkahar9321@gmail.com ↗
-            </a>
+          </figure>
 
-        </div>
+          <div class="project-meta">
 
+            <p class="project-label">01 / PRODUCTIVITY</p>
 
-        <div class="row">
+            <h3 class="project-title">StickyMind</h3>
 
-            <span class="mono">
-                © <span data-year>2026</span> RAJ KAHAR
-            </span>
+            <p class="project-desc">
+              A productivity application designed to organize
+              notes, manage thoughts and keep important reminders
+              in one place.
+            </p>
 
-            <div class="row" style="margin:0;gap:1.5rem">
+            <p class="project-tags">
+              Python · Flask · SQLite ↗
+            </p>
 
-                <a
-                    href="https://github.com/Rajkahar-12"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="link"
-                >
-                    GitHub ↗
-                </a>
-
-                <a href="index.html" class="link">
-                    Home
-                </a>
-
-            </div>
-
-        </div>
-
-    </footer>
-
-</main>
+          </div>
+        </a>
 
 
-<script src="script.js" defer></script>
+        <!-- RASHAI -->
+        <a class="project-card" href="rashai.html">
+
+          <figure class="project-media">
+            <img
+              src="assets/projects/rashai.png"
+              alt="RashAI study companion preview"
+              loading="lazy"
+            >
+          </figure>
+
+          <div class="project-meta">
+
+            <p class="project-label">02 / ARTIFICIAL INTELLIGENCE</p>
+
+            <h3 class="project-title">RashAI</h3>
+
+            <p class="project-desc">
+              An AI-powered study companion designed to make
+              exploring topics and learning more accessible.
+            </p>
+
+            <p class="project-tags">
+              HTML · CSS · JavaScript ↗
+            </p>
+
+          </div>
+        </a>
+
+
+        <!-- SLIDEWALA -->
+        <a class="project-card" href="slidewala.html">
+
+          <figure class="project-media">
+            <img
+              src="assets/projects/slidewala.png"
+              alt="SlideWala presentation generator preview"
+              loading="lazy"
+            >
+          </figure>
+
+          <div class="project-meta">
+
+            <p class="project-label">03 / AI & PRODUCTIVITY</p>
+
+            <h3 class="project-title">SlideWala</h3>
+
+            <p class="project-desc">
+              An AI presentation generator that transforms
+              topics and ideas into structured PowerPoint
+              presentations.
+            </p>
+
+            <p class="project-tags">
+              Python · Flask · AI APIs ↗
+            </p>
+
+          </div>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- WHAT'S NEXT -->
+    <section class="section rv">
+
+      <div class="section-header">
+        <p class="eyebrow">02 — THE JOURNEY CONTINUES</p>
+        <h2>What's next?</h2>
+      </div>
+
+      <h2 style="font-size:clamp(1.8rem,4vw,2.8rem); max-width:650px;">
+        The best ideas are still waiting to be <em>built.</em>
+      </h2>
+
+      <p class="text-muted" style="max-width:580px; margin-top:1rem;">
+        I'm always exploring new technologies, learning new skills
+        and experimenting with ideas. This collection will keep growing.
+      </p>
+
+      <p style="margin-top:1.5rem;">
+        <a href="about.html" class="btn btn--glass">
+          Get to know me ↗
+        </a>
+      </p>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="section rv">
+
+      <div class="section-header">
+        <p class="eyebrow">03 — HAVE AN IDEA?</p>
+        <h2>Let's build something meaningful.</h2>
+      </div>
+
+      <p class="text-muted">
+        Have a project in mind? I'd love to hear about it.
+      </p>
+
+      <a href="mailto:rajkahar9321@gmail.com" class="btn btn--glass">
+        Get in touch ↗
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div
+      class="section"
+      style="padding-block:0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;"
+    >
+
+      <p class="text-muted" style="margin:0; font-size:0.8rem; letter-spacing:0.08em;">
+        © 2026 RAJ KAHAR
+      </p>
+
+      <div style="display:flex; gap:1.25rem; flex-wrap:wrap;">
+
+        <a
+          href="https://github.com/Rajkahar-12"
+          class="text-muted"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="font-size:0.82rem;"
+        >
+          GitHub ↗
+        </a>
+
+        <a href="about.html" class="text-muted" style="font-size:0.82rem;">
+          About
+        </a>
+
+        <a href="index.html" class="text-muted" style="font-size:0.82rem;">
+          Home
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script src="script.js" defer></script>
 
 </body>
 </html>
