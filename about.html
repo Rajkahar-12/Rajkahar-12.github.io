@@ -1,367 +1,132 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0B0B0A">
-
-    <title>About Me — Raj Kahar</title>
-    <meta name="description" content="Get to know Raj Kahar, an IT student and developer exploring programming, backend development and AI.">
-
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Raj Kahar</title>
+  <meta name="description" content="About Raj Kahar — developer, builder, and BSc IT student.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portfolio-redesign.css">
 </head>
-
 <body>
 
-<header class="nav">
-
-    <a href="index.html" class="brand">
-        raj<span style="color:var(--ac)">.</span>
-    </a>
-
-    <nav aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="work.html">Work</a>
-        <a href="about.html" aria-current="page">About</a>
-        <a href="index.html#contact">Contact</a>
+  <header class="nav">
+    <a class="brand" href="index.html">raj<span>.</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#work">Work</a>
+      <a href="about.html" class="active">About</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch theme">☀</button>
+  </header>
 
-</header>
+  <main>
 
-
-<main>
-
-    <!-- INTRO -->
-
-    <section class="hero wrap">
-
-        <span class="mono eyebrow rv">
-            A LITTLE ABOUT ME / 2026
-        </span>
-
-        <h1 class="rv" style="--d:.1s">
-            More than just
-            <em>the code.</em>
-        </h1>
-
-        <p class="lede rv" style="--d:.2s">
-            I'm Raj Kahar — an IT student, developer and
-            curious mind who enjoys turning ideas into
-            something real.
-        </p>
-
+    <section class="section rv">
+      <p class="eyebrow">ABOUT / 2026</p>
+      <h1>Raj Kahar</h1>
+      <p class="text-muted">
+        Developer and BSc Information Technology student building useful things
+        with Python, the web, and AI.
+      </p>
     </section>
 
-
-    <!-- PERSONAL STORY -->
-
-    <section class="sec wrap about">
-
-        <div class="head rv">
-
-            <h2>The story so far</h2>
-
-            <span class="mono">01 — MY JOURNEY</span>
-
-        </div>
-
-
-        <p class="big rv">
-            I started with curiosity.
-            Now I'm learning to build.
-        </p>
-
-        <p class="rv">
-            I'm currently pursuing my Bachelor of Science
-            in Information Technology. My interest lies in
-            understanding how software works and how
-            technology can solve everyday problems.
-        </p>
-
-        <p class="rv" style="margin-top:1rem">
-            Instead of only learning concepts, I enjoy
-            experimenting with them through real projects.
-            From web applications to AI-powered tools,
-            every project teaches me something new.
-        </p>
-
+    <section class="section rv">
+      <div class="section-header">
+        <p class="eyebrow">01 — MY JOURNEY</p>
+        <h2>The story so far</h2>
+      </div>
+      <p class="text-muted">
+        I'm interested in understanding how technology actually works — and
+        using that understanding to build things that are genuinely useful,
+        not just impressive on a screen.
+      </p>
+      <p class="text-muted">
+        Currently pursuing a BSc in Information Technology, I spend most of my
+        time exploring programming fundamentals, backend development, and
+        AI-powered applications. I learn best by building real projects and
+        iterating on them until they feel right.
+      </p>
     </section>
 
-
-    <!-- APPROACH -->
-
-    <section class="sec wrap">
-
-        <div class="head rv">
-
-            <h2>How I approach things</h2>
-
-            <span class="mono">02 — MY MINDSET</span>
-
+    <section class="section rv">
+      <div class="section-header">
+        <p class="eyebrow">02 — WHAT I DO</p>
+        <h2>Focus areas</h2>
+      </div>
+      <div class="project-grid">
+        <div>
+          <p class="project-label">BACKEND</p>
+          <h3 class="project-title">Python & Flask</h3>
+          <p class="project-desc">
+            Building server-side logic, APIs, and applications with Python and
+            Flask — from small utilities to full products.
+          </p>
         </div>
-
-
-        <div class="grid">
-
-            <article class="card rv">
-
-                <div class="info">
-
-                    <span class="mono">01 / CURIOSITY</span>
-
-                    <h3>Explore</h3>
-
-                    <p>
-                        I like understanding how things work,
-                        exploring new technologies and
-                        asking questions.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="card rv" style="--d:.1s">
-
-                <div class="info">
-
-                    <span class="mono">02 / EXPERIMENT</span>
-
-                    <h3>Build</h3>
-
-                    <p>
-                        I learn by writing code, testing ideas,
-                        making mistakes and improving what
-                        I've created.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="card rv">
-
-                <div class="info">
-
-                    <span class="mono">03 / PROGRESS</span>
-
-                    <h3>Improve</h3>
-
-                    <p>
-                        Every project is an opportunity
-                        to improve my skills and understand
-                        something more deeply.
-                    </p>
-
-                </div>
-
-            </article>
-
+        <div>
+          <p class="project-label">INTERFACES</p>
+          <h3 class="project-title">HTML · CSS · JavaScript</h3>
+          <p class="project-desc">
+            Crafting clean, responsive interfaces with attention to typography,
+            spacing, and the small details that make a page feel considered.
+          </p>
         </div>
-
+        <div>
+          <p class="project-label">APPLIED AI</p>
+          <h3 class="project-title">AI-powered tools</h3>
+          <p class="project-desc">
+            Integrating language models and AI APIs to build practical tools —
+            like a study companion and a presentation generator.
+          </p>
+        </div>
+        <div>
+          <p class="project-label">TOOLING</p>
+          <h3 class="project-title">Git & GitHub</h3>
+          <p class="project-desc">
+            Version control, clean commit history, and deploying real projects
+            to production environments.
+          </p>
+        </div>
+      </div>
     </section>
 
-
-    <!-- TOOLKIT -->
-
-    <section class="sec wrap">
-
-        <div class="head rv">
-
-            <h2>Technologies I explore</h2>
-
-            <span class="mono">03 — TOOLKIT</span>
-
-        </div>
-
-
-        <div class="about">
-
-            <p class="big rv">
-                Learning the fundamentals.
-                Building towards bigger things.
-            </p>
-
-        </div>
-
-
-        <ul class="tags rv">
-
-            <li>Python</li>
-            <li>C</li>
-            <li>JavaScript</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Flask</li>
-            <li>SQLite</li>
-            <li>SQL</li>
-            <li>Git</li>
-            <li>GitHub</li>
-            <li>VS Code</li>
-            <li>AI APIs</li>
-
-        </ul>
-
+    <section class="section rv">
+      <div class="section-header">
+        <p class="eyebrow">03 — SELECTED WORK</p>
+        <h2>A few things I've built</h2>
+      </div>
+      <p class="text-muted">
+        StickyMind, RashAI, and SlideWala — three projects across productivity,
+        education, and AI tooling.
+      </p>
+      <p><a href="index.html#work" class="text-muted">See the projects ↗</a></p>
     </section>
 
-
-    <!-- CURRENT INTERESTS -->
-
-    <section class="sec wrap">
-
-        <div class="head rv">
-
-            <h2>What's on my mind</h2>
-
-            <span class="mono">04 — CURRENT INTERESTS</span>
-
-        </div>
-
-
-        <div class="grid">
-
-            <div class="card rv">
-                <div class="info">
-                    <span class="mono">01</span>
-                    <h3>Backend development</h3>
-                    <p>
-                        Building application logic,
-                        APIs and server-side systems.
-                    </p>
-                </div>
-            </div>
-
-
-            <div class="card rv" style="--d:.1s">
-                <div class="info">
-                    <span class="mono">02</span>
-                    <h3>Artificial intelligence</h3>
-                    <p>
-                        Exploring AI tools and integrating
-                        intelligent features into applications.
-                    </p>
-                </div>
-            </div>
-
-
-            <div class="card rv">
-                <div class="info">
-                    <span class="mono">03</span>
-                    <h3>Full-stack development</h3>
-                    <p>
-                        Understanding how frontend,
-                        backend and databases work together.
-                    </p>
-                </div>
-            </div>
-
-        </div>
-
+    <section class="section rv" id="contact">
+      <div class="section-header">
+        <p class="eyebrow">04 — GET IN TOUCH</p>
+        <h2>Let's connect</h2>
+      </div>
+      <p><a href="mailto:rajkahar9321@gmail.com" class="text-muted">rajkahar9321@gmail.com ↗</a></p>
+      <p><a href="https://github.com/Rajkahar-12" class="text-muted" target="_blank" rel="noopener noreferrer">github.com/Rajkahar-12 ↗</a></p>
     </section>
 
+  </main>
 
-    <!-- CLOSING -->
+  <footer class="section">
+    <p class="text-muted">© 2026 RAJ KAHAR</p>
+    <p>
+      <a href="https://github.com/Rajkahar-12" class="text-muted" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      &nbsp;·&nbsp;
+      <a href="about.html" class="text-muted">About</a>
+      &nbsp;·&nbsp;
+      <a href="index.html#work" class="text-muted">Work</a>
+    </p>
+  </footer>
 
-    <section class="sec wrap about">
-
-        <div class="head rv">
-
-            <h2>Looking ahead</h2>
-
-            <span class="mono">05 — THE JOURNEY CONTINUES</span>
-
-        </div>
-
-
-        <p class="big rv">
-            I haven't figured everything out yet.
-            That's the exciting part.
-        </p>
-
-        <p class="rv">
-            I'm here to keep learning, building better
-            products and discovering what I can create
-            with technology.
-        </p>
-
-        <div class="row rv">
-
-            <a href="work.html" class="btn">
-                Explore my work ↗
-            </a>
-
-            <a href="index.html#contact" class="link">
-                Get in touch
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-
-    <footer class="foot wrap">
-
-        <div class="rv">
-
-            <span class="mono">HAVE SOMETHING IN MIND?</span>
-
-            <h2 style="margin-top:1rem">
-                Let's connect.
-            </h2>
-
-            <a
-                href="mailto:rajkahar9321@gmail.com"
-                class="mail"
-            >
-                rajkahar9321@gmail.com ↗
-            </a>
-
-        </div>
-
-
-        <div class="row">
-
-            <span class="mono">
-                © <span data-year>2026</span> RAJ KAHAR
-            </span>
-
-            <div class="row" style="margin:0;gap:1.5rem">
-
-                <a
-                    href="https://github.com/Rajkahar-12"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="link"
-                >
-                    GitHub ↗
-                </a>
-
-                <a href="index.html" class="link">
-                    Home
-                </a>
-
-            </div>
-
-        </div>
-
-    </footer>
-
-</main>
-
-
-<script src="script.js" defer></script>
-
+  <script src="script.js" defer></script>
 </body>
 </html>
