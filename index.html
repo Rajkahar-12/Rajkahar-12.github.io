@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f8f5f0">
+    <meta name="theme-color" content="#f7f5f2">
 
     <title>Raj Kahar — Developer & Builder</title>
     <meta name="description" content="Raj Kahar is a developer and BSc IT student building practical digital products with Python, Flask and modern web technologies.">
@@ -14,10 +14,171 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="portfolio-redesign.css">
+
+    <style>
+        .dashboard-welcome {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+
+        .dashboard-welcome h2 {
+            font-size: clamp(25px, 4vw, 36px);
+            letter-spacing: -1.5px;
+            margin: 8px 0;
+        }
+
+        .dashboard-welcome p {
+            color: var(--muted);
+            margin: 0;
+        }
+
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 10px 15px;
+            border-radius: 30px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #35ad72;
+            box-shadow: 0 0 0 4px rgba(53,173,114,.12);
+        }
+
+        .dashboard-card .widget-label {
+            display: block;
+            color: var(--muted);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            margin-bottom: 14px;
+        }
+
+        .dashboard-card .widget-value {
+            display: block;
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 5px;
+        }
+
+        .dashboard-card .widget-detail {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .dashboard-card .widget-icon {
+            display: grid;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            margin-bottom: 18px;
+            font-size: 17px;
+        }
+
+        .dashboard-quicklinks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 28px;
+        }
+
+        .hero-meta span {
+            padding: 7px 11px;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            color: var(--muted);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .8px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0 20px;
+        }
+
+        .project-tags span {
+            padding: 6px 10px;
+            border-radius: 8px;
+            background: var(--surface-soft);
+            color: var(--muted);
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .contact-links a {
+            padding: 12px 18px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--surface);
+            font-size: 13px;
+            font-weight: 700;
+            transition: .3s ease;
+        }
+
+        .contact-links a:hover {
+            background: var(--accent-soft);
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .dashboard-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 25px 0;
+        }
+
+        @media (max-width: 600px) {
+            .dashboard-welcome {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .dashboard-quicklinks {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .dashboard-quicklinks .btn {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body class="home-page">
@@ -37,43 +198,132 @@
 
 <main>
 
-    <!-- HERO -->
+    <!-- WELCOME -->
 
     <section class="hero">
+
         <div class="hero-content">
 
             <span class="eyebrow">
-                INDEPENDENT DEVELOPER · INDIA
+                PERSONAL DEVELOPER DASHBOARD
             </span>
 
             <h1>
-                I build things<br>
-                that make life<br>
-                <span class="accent">more useful.</span>
+                Building ideas.<br>
+                Creating <span>useful things.</span>
             </h1>
 
             <p>
-                Hey, I'm Raj — a developer and first-year BSc IT student
-                who turns curious ideas into practical digital products.
+                Hey, I'm Raj — a developer and BSc IT student
+                exploring technology, building digital products,
+                and learning something new with every project.
             </p>
 
             <div class="hero-actions">
-                <a href="work.html" class="btn primary">
+
+                <a href="work.html" class="btn">
                     Explore my work ↗
                 </a>
 
-                <a href="about.html" class="btn">
-                    About me
+                <a href="#contact" class="btn secondary">
+                    Let's connect
                 </a>
+
             </div>
 
             <div class="hero-meta">
                 <span>PYTHON</span>
+                <span>FLASK</span>
                 <span>WEB DEVELOPMENT</span>
-                <span>BUILDING & LEARNING</span>
+                <span>AI EXPERIMENTS</span>
             </div>
 
         </div>
+
+    </section>
+
+
+    <!-- DASHBOARD -->
+
+    <section class="section" id="dashboard">
+
+        <div class="dashboard-welcome">
+
+            <div>
+                <span class="eyebrow">01 / OVERVIEW</span>
+                <h2>My workspace.</h2>
+                <p>A quick look at what I'm learning and building.</p>
+            </div>
+
+            <div class="status-indicator">
+                <span class="status-dot"></span>
+                Learning & building
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-grid">
+
+            <article class="dashboard-card">
+
+                <div class="widget-icon">⌘</div>
+
+                <span class="widget-label">PROJECTS</span>
+
+                <span class="widget-value">03</span>
+
+                <span class="widget-detail">
+                    Featured projects
+                </span>
+
+            </article>
+
+
+            <article class="dashboard-card">
+
+                <div class="widget-icon">⌨</div>
+
+                <span class="widget-label">MAIN FOCUS</span>
+
+                <span class="widget-value">Python</span>
+
+                <span class="widget-detail">
+                    Backend development
+                </span>
+
+            </article>
+
+
+            <article class="dashboard-card">
+
+                <div class="widget-icon">✦</div>
+
+                <span class="widget-label">CURRENT GOAL</span>
+
+                <span class="widget-value">Build</span>
+
+                <span class="widget-detail">
+                    Better real-world applications
+                </span>
+
+            </article>
+
+        </div>
+
+
+        <div class="dashboard-quicklinks">
+
+            <a href="work.html" class="btn">
+                Browse projects ↗
+            </a>
+
+            <a href="about.html" class="btn secondary">
+                Explore my skills ↗
+            </a>
+
+        </div>
+
     </section>
 
 
@@ -82,25 +332,28 @@
     <section class="section" id="about">
 
         <div class="section-heading">
-            <span class="eyebrow">01 / INTRODUCTION</span>
+
+            <span class="eyebrow">02 / ABOUT ME</span>
 
             <h2>
                 Curiosity first.<br>
                 <span class="accent">Code follows.</span>
             </h2>
+
         </div>
 
         <div class="about-content">
 
             <p>
-                I'm a first-year BSc IT student interested in technology,
-                programming, and creating useful things for the web.
+                I'm a first-year BSc IT student interested in
+                technology, programming, and creating useful
+                things for the web.
             </p>
 
             <p>
-                I enjoy learning Python, exploring backend development,
-                and building projects that solve real problems.
-                Every project teaches me something new.
+                I enjoy learning Python, exploring backend
+                development, and building projects that solve
+                real problems. Every project teaches me something new.
             </p>
 
             <a href="about.html" class="btn">
@@ -108,6 +361,7 @@
             </a>
 
         </div>
+
     </section>
 
 
@@ -116,7 +370,8 @@
     <section class="section" id="work">
 
         <div class="section-heading">
-            <span class="eyebrow">02 / SELECTED WORK</span>
+
+            <span class="eyebrow">03 / SELECTED WORK</span>
 
             <h2>
                 Things I've<br>
@@ -127,7 +382,9 @@
                 A few projects I've worked on while learning,
                 experimenting, and building.
             </p>
+
         </div>
+
 
         <div class="projects-grid">
 
@@ -161,11 +418,12 @@
                         <span>SQLite</span>
                     </div>
 
-                    <a href="stickymind.html" class="btn small">
+                    <a href="stickymind.html" class="btn">
                         View project ↗
                     </a>
 
                 </div>
+
             </article>
 
 
@@ -199,11 +457,12 @@
                         <span>JavaScript</span>
                     </div>
 
-                    <a href="rashai.html" class="btn small">
+                    <a href="rashai.html" class="btn">
                         View project ↗
                     </a>
 
                 </div>
+
             </article>
 
 
@@ -237,19 +496,23 @@
                         <span>AI APIs</span>
                     </div>
 
-                    <a href="slidewala.html" class="btn small">
+                    <a href="slidewala.html" class="btn">
                         View project ↗
                     </a>
 
                 </div>
+
             </article>
 
         </div>
 
-        <div class="hero-actions">
-            <a href="work.html" class="btn">
+
+        <div class="dashboard-quicklinks">
+
+            <a href="work.html" class="btn secondary">
                 View all projects ↗
             </a>
+
         </div>
 
     </section>
@@ -261,7 +524,7 @@
 
         <div class="section-heading">
 
-            <span class="eyebrow">03 / MY TOOLKIT</span>
+            <span class="eyebrow">04 / MY TOOLKIT</span>
 
             <h2>
                 Learning by<br>
@@ -275,14 +538,18 @@
 
         </div>
 
+
         <ul class="tool-list">
+
             <li>Python <span>01</span></li>
             <li>Flask <span>02</span></li>
             <li>HTML &amp; CSS <span>03</span></li>
             <li>JavaScript <span>04</span></li>
             <li>SQLite <span>05</span></li>
             <li>Git &amp; GitHub <span>06</span></li>
+
         </ul>
+
 
         <div class="exploring">
 
@@ -304,7 +571,7 @@
 
         <div class="contact-box">
 
-            <span class="eyebrow">04 / GET IN TOUCH</span>
+            <span class="eyebrow">05 / GET IN TOUCH</span>
 
             <h2>
                 Have an idea?<br>
@@ -334,6 +601,7 @@
             </div>
 
         </div>
+
     </section>
 
 </main>
@@ -354,6 +622,7 @@
     </p>
 
 </footer>
+
 
 <script src="script.js" defer></script>
 
