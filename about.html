@@ -1,123 +1,139 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<!doctype html>
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — Raj Kahar</title>
-  <meta name="description" content="About Raj Kahar — developer, builder, and BSc IT student.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#FFF0DC">
+  <title>About | Raj Kahar</title>
+  <meta name="description" content="About Raj Kahar - Developer, tech enthusiast, and BSc IT student.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem("theme");
+        var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.setAttribute("data-theme", stored || (prefersDark ? "dark" : "light"));
+      } catch (e) {}
+    })();
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <link rel="stylesheet" href="portfolio-redesign.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <div id="preloader">
+    <div class="loader-content">
+      <div class="loader-brand">RK<span>.</span></div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
 
-  <header class="nav">
-    <a class="brand" href="index.html">raj<span>.</span></a>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="index.html#work">Work</a>
-      <a href="about.html" class="active">About</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
-    <button class="theme-toggle" type="button" aria-label="Switch theme">☀</button>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Raj Kahar home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="1" y="1" width="46" height="46" rx="14"/><path d="M11 35V13h10c5.7 0 8.5 2.8 8.5 7.1 0 3.2-1.7 5.4-4.8 6.4L33 35h-7l-6.2-7H17v7zm6-12h3.7c2.8 0 4.2-.9 4.2-2.8s-1.4-2.8-4.2-2.8H17z"/><path class="k-mark" d="M32 13h5v8l5-8h6l-7 10 7 12h-6l-5-9v9h-5z"/></svg></span>
+        <span class="brand-name">RAJ KAHAR<span class="brand-dot">.</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#work">Work</a>
+        <a class="active" href="about.html">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="bell-button" type="button" aria-label="Notifications">
+          <svg class="bell-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+          <span class="bell-dot"></span>
+        </button>
+        <button class="theme-toggle" type="button" aria-label="Switch theme" aria-pressed="false">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+        </button>
+        <a class="header-cta" href="mailto:rajkahar9321@gmail.com">Let's talk <span>↗</span></a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </div>
   </header>
 
   <main>
-    <section class="section rv" style="padding-top: clamp(5rem, 10vw, 7rem);">
-      <p class="eyebrow">ABOUT / 2026</p>
-      <h1>Raj Kahar — <em>developer & builder</em>.</h1>
-      <p class="text-muted" style="font-size: 1.02rem; max-width: 56ch;">
-        BSc Information Technology student building useful things with Python,
-        the web, and AI.
-      </p>
+    <section class="page-hero section-wrap reveal">
+      <p class="eyebrow">About Me</p>
+      <h1>Hey! I'm <span class="highlight">Raj Kahar.</span></h1>
+      <p class="page-lead">A developer, tech enthusiast, and FY BSc IT student who enjoys turning ideas into digital experiences.</p>
     </section>
 
-    <section class="section rv">
-      <div class="section-header">
-        <p class="eyebrow">01 — MY JOURNEY</p>
-        <h2>The story so far</h2>
-      </div>
-      <p class="text-muted">
-        I'm interested in understanding how technology actually works — and
-        using that understanding to build things that are genuinely useful,
-        not just impressive on a screen.
-      </p>
-      <p class="text-muted">
-        Currently pursuing a BSc in Information Technology, I spend most of my
-        time exploring programming fundamentals, backend development, and
-        AI-powered applications. I learn best by building real projects and
-        iterating on them until they feel right.
-      </p>
-    </section>
+    <section class="section-wrap content-section">
+      <div class="content-main reveal">
+        <p>I'm passionate about programming, web development, and exploring how technology can solve real-world problems. I enjoy experimenting with different technologies, learning new skills, and building projects that turn creative ideas into something useful.</p>
+        <p>My journey includes working with <strong>Python, C, HTML, CSS, JavaScript, Flask, and AI integrations</strong>. Rather than just learning concepts, I believe in applying them by building practical projects.</p>
 
-    <section class="section rv">
-      <div class="section-header">
-        <p class="eyebrow">02 — WHAT I DO</p>
-        <h2>Focus areas</h2>
-      </div>
-      <div class="feature-grid">
-        <div class="feature">
-          <p class="project-label">BACKEND</p>
-          <h3 class="project-title">Python & Flask</h3>
-          <p class="text-muted">Building server-side logic, APIs, and applications — from small utilities to full products.</p>
-        </div>
-        <div class="feature">
-          <p class="project-label">INTERFACES</p>
-          <h3 class="project-title">HTML · CSS · JavaScript</h3>
-          <p class="text-muted">Crafting clean, responsive interfaces with attention to typography, spacing, and detail.</p>
-        </div>
-        <div class="feature">
-          <p class="project-label">APPLIED AI</p>
-          <h3 class="project-title">AI-powered tools</h3>
-          <p class="text-muted">Integrating language models and AI APIs to build practical tools — a study companion, a deck generator.</p>
-        </div>
-        <div class="feature">
-          <p class="project-label">TOOLING</p>
-          <h3 class="project-title">Git & GitHub</h3>
-          <p class="text-muted">Version control, clean commit history, and deploying real projects to production.</p>
+        <h3 class="sub-heading">What I'm Building</h3>
+        <ul class="about-list">
+          <li><strong>RashAI</strong> – An AI-powered study companion designed to make learning easier and more interactive.</li>
+          <li><strong>SlideWala</strong> – An AI-powered presentation generator that helps users create customized presentations.</li>
+          <li><strong>StickyMind</strong> – A project focused on organizing thoughts and improving productivity.</li>
+        </ul>
+
+        <p>I'm continuously learning, experimenting, and improving my development skills. My goal is to become a skilled developer who builds meaningful products and creates experiences that people genuinely enjoy using.</p>
+
+        <div class="quote-block">
+          I believe every great project starts with curiosity and the courage to build.
         </div>
       </div>
     </section>
 
-    <section class="section rv">
-      <div class="section-header">
-        <p class="eyebrow">03 — SELECTED WORK</p>
-        <h2>A few things I've built</h2>
+    <section class="soft-section">
+      <div class="section-wrap content-section">
+        <div class="content-main reveal">
+          <h2 style="text-align:center;">Portfolio Identity</h2>
+          <div class="identity-grid">
+            <div class="identity-item">
+              <span>Name</span>
+              <strong>Raj Kahar</strong>
+            </div>
+            <div class="identity-item">
+              <span>Role</span>
+              <strong>Developer · Builder · Student</strong>
+            </div>
+            <div class="identity-item">
+              <span>Interests</span>
+              <strong>Web Dev, Python, AI, Software Dev</strong>
+            </div>
+            <div class="identity-item">
+              <span>Technologies</span>
+              <strong>Python, C, Flask, JS, HTML, CSS</strong>
+            </div>
+            <div class="identity-item full-width">
+              <span>Tagline</span>
+              <strong>Turning ideas into digital experiences.</strong>
+            </div>
+          </div>
+        </div>
       </div>
-      <p class="text-muted">
-        StickyMind, RashAI, and SlideWala — three projects across productivity,
-        education, and AI tooling.
-      </p>
-      <p><a href="index.html#work" class="text-muted">See the projects ↗</a></p>
     </section>
 
-    <section class="section rv" id="contact">
-      <div class="section-header">
-        <p class="eyebrow">04 — GET IN TOUCH</p>
-        <h2>Let's connect</h2>
+    <section class="contact-section compact-contact">
+      <div class="section-wrap contact-inner reveal">
+        <h2>Let's connect.</h2>
+        <a class="button button-glass-light" href="mailto:rajkahar9321@gmail.com">Get in touch <span>↗</span></a>
       </div>
-      <p>
-        <a href="mailto:rajkahar9321@gmail.com" class="btn btn--glass">rajkahar9321@gmail.com ↗</a>
-      </p>
-      <p style="margin-top: 1rem;">
-        <a href="https://github.com/Rajkahar-12" class="text-muted" target="_blank" rel="noopener noreferrer">github.com/Rajkahar-12 ↗</a>
-      </p>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="section" style="padding-block: 0; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; align-items: center;">
-      <p class="text-muted" style="margin: 0; font-size: 0.8rem; letter-spacing: 0.08em;">© 2026 RAJ KAHAR</p>
-      <p style="margin: 0; display: flex; gap: 1.25rem;">
-        <a href="https://github.com/Rajkahar-12" class="text-muted" style="font-size: 0.82rem;" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        <a href="about.html" class="text-muted" style="font-size: 0.82rem;">About</a>
-        <a href="index.html#work" class="text-muted" style="font-size: 0.82rem;">Work</a>
-      </p>
+  <footer class="site-footer">
+    <div class="section-wrap footer-inner">
+      <a class="footer-brand" href="index.html">RAJ KAHAR<span>.</span></a>
+      <div class="footer-links">
+        <a href="https://github.com/Rajkahar-12" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="mailto:rajkahar9321@gmail.com">Email ↗</a>
+      </div>
+      <span class="copyright">© 2026</span>
     </div>
   </footer>
-
-  <script src="script.js" defer></script>
 </body>
 </html>
