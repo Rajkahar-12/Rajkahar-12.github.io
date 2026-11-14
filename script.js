@@ -79,18 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* -- Bell button (Kokonut UI vanilla port) -- */
-  document.querySelectorAll(".bell-button").forEach(btn => {
-    btn.addEventListener("click", () => {
-      btn.classList.remove("is-ringing");
-      void btn.offsetWidth; // restart animation
-      btn.classList.add("is-ringing");
-      const dot = btn.querySelector(".bell-dot");
-      if (dot) dot.classList.add("is-hidden");
-      setTimeout(() => btn.classList.remove("is-ringing"), 1200);
-    });
-  });
-
   /* -- Magnetic buttons (guarded) -- */
   if (hasAnime && !prefersReducedMotion) {
     document.querySelectorAll(".magnetic").forEach(el => {
