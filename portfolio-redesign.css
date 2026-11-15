@@ -199,7 +199,7 @@ p  { color: var(--text-main); margin-inline: auto; font-size: 1rem; line-height:
 /* ==========================================================
    BUTTONS
    ========================================================== */
-.button, .header-cta, .theme-toggle, .menu-toggle, .tool-list span {
+.button, .header-cta, .theme-toggle, .menu-toggle, .tool-list span, .pill-btn {
   will-change: transform;
 }
 
@@ -331,12 +331,13 @@ p  { color: var(--text-main); margin-inline: auto; font-size: 1rem; line-height:
 .card-buttons {
   display: flex;
   gap: 12px;
-  flex-wrap: wrap; /* Ensures buttons wrap if screen is too narrow */
+  flex-wrap: wrap;
 }
 
 .pill-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   padding: 8px 14px;
   background: var(--bg-cream);
@@ -348,12 +349,12 @@ p  { color: var(--text-main); margin-inline: auto; font-size: 1rem; line-height:
   text-transform: uppercase;
   letter-spacing: 0.05em;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .pill-btn:hover {
   background: var(--glass-bg-hover);
   border-color: var(--burgundy);
-  transform: translateY(-2px);
 }
 
 [data-theme="dark"] .pill-btn {
@@ -781,9 +782,9 @@ html.js .reveal.is-visible {
   .card-header { 
     flex-direction: column; 
     align-items: flex-start; 
-    gap: 16px; 
+    gap: 12px; 
   }
-  .card-number { display: none; } /* Hide numbers on small mobile for cleaner look */
+  .card-number { display: none; }
   
   .project-facts { grid-template-columns: 1fr; }
   .identity-grid { grid-template-columns: 1fr; }
@@ -795,20 +796,31 @@ html.js .reveal.is-visible {
   .contact-inner { padding: 56px 20px; }
 }
 
+/* --- SMALL MOBILE TWEAKS (BUTTONS) --- */
 @media (max-width: 480px) {
   .hero { padding-top: 140px; }
   
   .project-card { padding: 16px; gap: 16px; }
   .project-info h3 { font-size: 1.6rem; }
   
+  /* Keep buttons side-by-side, make them small and circular */
   .card-buttons { 
     width: 100%; 
-    flex-direction: column; /* Stack buttons on very small screens */
+    flex-direction: row; 
+    flex-wrap: wrap;
+    gap: 8px;
   }
+  
   .pill-btn { 
-    width: 100%; 
-    justify-content: center; 
-    padding: 10px 14px;
+    width: auto; 
+    padding: 6px 12px;
+    font-size: 0.65rem;
+    border-radius: 99px;
+  }
+
+  .pill-btn svg {
+    width: 12px;
+    height: 12px;
   }
   
   .project-info > p { font-size: 0.95rem; margin-bottom: 20px; }
