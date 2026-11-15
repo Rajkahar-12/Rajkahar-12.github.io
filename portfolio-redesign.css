@@ -140,7 +140,7 @@ p  { color: var(--text-main); margin-inline: auto; font-size: 1rem; line-height:
   transform: translateX(-50%);
   width: max-content;
   max-width: calc(100% - 32px);
-  z-index: 1000;
+  z-index: 1000; /* Stays above the full-screen menu */
   border-radius: 999px;
   background: transparent;
 }
@@ -168,8 +168,8 @@ p  { color: var(--text-main); margin-inline: auto; font-size: 1rem; line-height:
   gap: 24px;
 }
 
-.brand { flex: 1; display: flex; justify-content: flex-start; align-items: center; gap: 8px; }
-.header-actions { flex: 1; display: flex; justify-content: flex-end; align-items: center; gap: 8px; }
+.brand { flex: 1; display: flex; justify-content: flex-start; align-items: center; gap: 8px; z-index: 1001; }
+.header-actions { flex: 1; display: flex; justify-content: flex-end; align-items: center; gap: 8px; z-index: 1001; }
 
 .brand-mark { width: 28px; height: 28px; display: block; }
 .brand-mark svg { width: 100%; height: 100%; }
@@ -255,9 +255,18 @@ p  { color: var(--text-main); margin-inline: auto; font-size: 1rem; line-height:
 [data-theme="dark"] .theme-toggle .icon-sun { display: none; }
 [data-theme="dark"] .theme-toggle .icon-moon { display: block; }
 
-.menu-toggle { display: none; flex-direction: column; gap: 4px; }
-.menu-toggle span { display: block; width: 15px; height: 2px; background: var(--burgundy); transition: transform .2s ease; }
+/* Menu Toggle Animations */
+.menu-toggle { display: none; flex-direction: column; gap: 4px; justify-content: center; align-items: center; }
+.menu-toggle span { display: block; width: 15px; height: 2px; background: var(--burgundy); transition: transform .3s ease, opacity .3s ease; }
 [data-theme="dark"] .menu-toggle span { background: var(--ink); }
+
+/* Turn hamburger into X when open */
+.menu-toggle[aria-expanded="true"] span:first-child {
+  transform: translateY(3px) rotate(45deg);
+}
+.menu-toggle[aria-expanded="true"] span:last-child {
+  transform: translateY(-3px) rotate(-45deg);
+}
 
 /* ==========================================================
    HERO
@@ -723,14 +732,27 @@ html.js .reveal.is-visible {
 }
 
 /* ==========================================================
-   RESPONSIVE (MOBILE FRIENDLY)
+   RESPONSIVE (MOBILE FRIENDLY & PERFORMANCE FIXES)
    ========================================================== */
 @media (max-width: 900px) {
   .project-card {
-    grid-template-columns: 1fr; /* Stack vertically on tablets */
+    grid-template-columns: 1fr;
     padding: 30px;
     gap: 30px;
+    
+    /* PERFORMANCE FIX: Disable heavy blur on mobile */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    /* Use solid colors instead of blurred glass */
+    background: var(--bg-cream); 
+    box-shadow: 0 10px 25px rgba(121, 11, 19, 0.05); /* Lighter shadow */
   }
+  
+  [data-theme="dark"] .project-card {
+    background: var(--bg-cream-soft);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+
   .project-info h3 { font-size: 2.2rem; }
   .project-info > p { max-width: 100%; }
 }
@@ -749,41 +771,69 @@ html.js .reveal.is-visible {
   .brand { flex: auto; }
   .header-actions { flex: auto; }
 
+  /* FULL SCREEN MOBILE MENU FIX */
   .site-nav {
-    flex: 100%;
-    order: 3;
-    position: absolute;
-    left: 0; right: 0;
-    top: calc(100% + 10px);
-    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
     flex-direction: column;
-    align-items: stretch;
-    gap: 4px;
-    padding: 12px;
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    box-shadow: var(--glass-shadow);
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: var(--bg-cream); /* Solid background covers everything */
+    z-index: 999; /* Below header, above page content */
+    
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: opacity .3s ease, visibility .3s ease, transform .3s ease;
+    border: none;
+    box-shadow: none;
   }
-  .site-nav.is-open { display: flex; }
-  .site-nav a { padding: 12px; font-size: .92rem; text-align: center; }
+  
+  [data-theme="dark"] .site-nav {
+    background: var(--bg-cream-soft);
+  }
+
+  .site-nav.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .site-nav a { 
+    font-size: 2.2rem; /* Large text */
+    font-weight: 800;
+    padding: 12px 40px;
+    border-radius: 99px;
+    text-align: center;
+    width: auto;
+    color: var(--muted);
+    transition: all 0.2s ease;
+  }
+  
+  .site-nav a:hover,
+  .site-nav a.active {
+    color: var(--burgundy);
+    background: rgba(121, 11, 19, 0.08);
+  }
+
+  [data-theme="dark"] .site-nav a:hover,
+  [data-theme="dark"] .site-nav a.active {
+    color: var(--ink);
+    background: rgba(255, 240, 220, 0.1);
+  }
 
   .header-cta { display: none; }
   .menu-toggle { display: flex; }
 
-  .project-card { 
-    padding: 20px; 
-    gap: 20px; 
-    border-radius: 20px;
-  }
+  .project-card { padding: 20px; gap: 20px; border-radius: 20px; }
   .project-info h3 { font-size: 1.8rem; }
   
-  .card-header { 
-    flex-direction: column; 
-    align-items: flex-start; 
-    gap: 12px; 
-  }
+  .card-header { flex-direction: column; align-items: flex-start; gap: 12px; }
   .card-number { display: none; }
   
   .project-facts { grid-template-columns: 1fr; }
@@ -816,6 +866,7 @@ html.js .reveal.is-visible {
     padding: 6px 12px;
     font-size: 0.65rem;
     border-radius: 99px;
+    backdrop-filter: none !important; /* Remove blur from buttons too */
   }
 
   .pill-btn svg {
@@ -824,6 +875,9 @@ html.js .reveal.is-visible {
   }
   
   .project-info > p { font-size: 0.95rem; margin-bottom: 20px; }
+  
+  /* Disable will-change on mobile to save RAM */
+  .button, .pill-btn, .project-card { will-change: auto !important; }
 }
 
 /* ==========================================================
