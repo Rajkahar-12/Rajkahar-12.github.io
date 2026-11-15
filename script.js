@@ -10,6 +10,7 @@ const ENABLE_INK_BG = false;
 
 const hasAnime = typeof anime !== "undefined";
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const isTouchDevice = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
 
 /* ---------------- PRELOADER ---------------- */
 window.addEventListener("load", () => {
@@ -79,8 +80,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* -- Magnetic buttons (guarded) -- */
-  if (hasAnime && !prefersReducedMotion) {
+  /* -- Magnetic buttons (DISABLED ON MOBILE for performance) -- */
+  if (hasAnime && !prefersReducedMotion && !isTouchDevice) {
     document.querySelectorAll(".magnetic").forEach(el => {
       el.addEventListener("mousemove", (e) => {
         const rect = el.getBoundingClientRect();
@@ -106,37 +107,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* -- Tilt cards + spotlight -- */
-  document.querySelectorAll(".tilt-card").forEach(card => {
-    card.addEventListener("mousemove", (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      card.style.setProperty("--mouse-x", `${x}px`);
-      card.style.setProperty("--mouse-y", `${y}px`);
+  /* -- Tilt cards + spotlight (DISABLED ON MOBILE) -- */
+  if (!isTouchDevice) {
+    document.querySelectorAll(".tilt-card").forEach(card => {
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty("--mouse-x", `${x}px`);
+        card.style.setProperty("--mouse-y", `${y}px`);
 
-      if (!hasAnime || prefersReducedMotion) return;
-      const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -6;
-      const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 6;
-      anime({
-        targets: card,
-        rotateX, rotateY, scale: 1.02,
-        duration: 400,
-        easing: "easeOutCubic",
-        begin: () => { card.style.zIndex = 10; }
+        if (!hasAnime || prefersReducedMotion) return;
+        const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -6;
+        const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 6;
+        anime({
+          targets: card,
+          rotateX, rotateY, scale: 1.02,
+          duration: 400,
+          easing: "easeOutCubic",
+          begin: () => { card.style.zIndex = 10; }
+        });
+      });
+      card.addEventListener("mouseleave", () => {
+        if (!hasAnime || prefersReducedMotion) return;
+        anime({
+          targets: card,
+          rotateX: 0, rotateY: 0, scale: 1,
+          duration: 700,
+          easing: "easeOutElastic(1, .6)",
+          complete: () => { card.style.zIndex = 1; }
+        });
       });
     });
-    card.addEventListener("mouseleave", () => {
-      if (!hasAnime || prefersReducedMotion) return;
-      anime({
-        targets: card,
-        rotateX: 0, rotateY: 0, scale: 1,
-        duration: 700,
-        easing: "easeOutElastic(1, .6)",
-        complete: () => { card.style.zIndex = 1; }
-      });
-    });
-  });
+  }
 
   /* -- Scroll reveal (CSS + IntersectionObserver) -- */
   const revealEls = document.querySelectorAll(".reveal");
